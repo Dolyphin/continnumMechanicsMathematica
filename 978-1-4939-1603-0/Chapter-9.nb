@@ -1,0 +1,2530 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     65884,       2521]
+NotebookOptionsPosition[     57901,       2230]
+NotebookOutlinePosition[     58433,       2250]
+CellTagsIndexPosition[     58390,       2247]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Chapter 9", "Title",
+ Evaluatable->False,
+ TextAlignment->Center,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[StyleBox["Fluid Mechanics",
+ FontSlant->"Italic"]], "Subtitle",
+ Evaluatable->False,
+ TextAlignment->Center,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->36,
+ FontWeight->"Bold"],
+
+Cell[CellGroupData[{
+
+Cell["Load MECHANICS.m", "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18],
+
+Cell[TextData[{
+ "Suppose you have copied the package ",
+ StyleBox["MECHANICS.m ",
+  FontWeight->"Bold"],
+ " in the directory c:\\M",
+ StyleBox["ECHANICS",
+  FontVariations->{"CompatibilityType"->0}],
+ ". To load it, you have to type ",
+ StyleBox["(\[ShiftKey] + \[ReturnIndicator])  in the current ",
+  FontWeight->"Plain"],
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["Mathematica", 
+    StyleBox["\[RegisteredTrademark]",
+     FontWeight->"Plain"]], TraditionalForm]]],
+ StyleBox[" session",
+  FontWeight->"Plain"]
+}], "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ "<<C:\\Mechanics\\",
+ StyleBox["Mechanics",
+  FontWeight->"Bold"],
+ ".m"
+}], "Input",
+ CellChangeTimes->{
+  3.609480012909094*^9, 3.6095875982098064`*^9, 3.6118171637200003`*^9, {
+   3.611825771425*^9, 3.611825775318*^9}},
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["The Program Potential",
+ FontSize->30,
+ FontWeight->"Bold"]], "Subtitle",
+ CellChangeTimes->{{3.609593632857255*^9, 3.609593641147267*^9}, {
+   3.6095940487488375`*^9, 3.609594056878849*^9}, 3.611821390881*^9},
+ TextAlignment->Left,
+ FontFamily->"Times New Roman",
+ FontSlant->"Italic"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["The Aim of the Program Potential", "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18]], "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18],
+
+Cell[BoxData[
+ RowBox[{"UsagePotential", "[", "]"}]], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["How to Use the Program Potential", "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18]], "Section",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"HelpPotential", "[", " ", "]"}]], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Worked Examples",
+ FontFamily->"Times New Roman"]], "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "E",
+ StyleBox["xample",
+  FontFamily->"Times New Roman"],
+ " 1: Uniform motion"
+}], "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"F", "=", 
+   RowBox[{"2", " ", "z"}]}], ";"}], "\n", 
+ RowBox[{"Potential", "[", 
+  RowBox[{"F", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1.01"}], ",", "1.01"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1.01"}], ",", "1.01"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "10"}], ",", "10", ",", "0.5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "10"}], ",", "10", ",", "0.5"}], "}"}], ",", "Automatic", 
+   ",", "All"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.6095882955517826`*^9, 3.6095882983817863`*^9}, {
+  3.6118258208710003`*^9, 3.611825880572*^9}},
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "E",
+ StyleBox["xample",
+  FontFamily->"Times New Roman"],
+ " 2: Vortex Potential"
+}], "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"F", "=", 
+   RowBox[{
+    RowBox[{"-", "I"}], "*", 
+    RowBox[{"Log", "[", "z", "]"}]}]}], ";"}], "\n", 
+ RowBox[{"Potential", "[", 
+  RowBox[{"F", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2.5"}], ",", "2.5", ",", "0.5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2.5"}], ",", "2.5", ",", "0.5"}], "}"}], ",", "Automatic", 
+   ",", "All"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.60958782235012*^9, 3.6095878239701223`*^9}, {
+  3.609587955790307*^9, 3.6095881969816446`*^9}, {3.611826390058*^9, 
+  3.611826544908*^9}},
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "E",
+ StyleBox["xample",
+  FontFamily->"Times New Roman"],
+ " 3: Sources and Sinks"
+}], "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"F", "=", 
+   RowBox[{"Log", "[", "z", "]"}]}], ";"}], "\n", 
+ RowBox[{"Potential", "[", 
+  RowBox[{"F", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2.8"}], ",", "2.8"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2.8"}], ",", "2.8"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2.5"}], ",", "2.5", ",", "0.5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2.5"}], ",", "2.5", ",", "0.5"}], "}"}], ",", "Automatic", 
+   ",", "All"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.6095883098718023`*^9, 3.6095883677318835`*^9}, {
+   3.611826297361*^9, 3.611826352168*^9}, 3.61182665995*^9},
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "E",
+ StyleBox["xample",
+  FontFamily->"Times New Roman"],
+ " 4: Doublet"
+}], "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"F", "=", 
+   RowBox[{"1", "/", "z"}]}], ";"}], "\n", 
+ RowBox[{"Potential", "[", 
+  RowBox[{"F", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "0.5"}], ",", "0.5", ",", "0.2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "0.5"}], ",", "0.5", ",", "0.2"}], "}"}], ",", "Automatic", 
+   ",", "All"}], "]"}]}], "Input",
+ CellChangeTimes->{3.6095884418819876`*^9},
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "E",
+ StyleBox["xample",
+  FontFamily->"Times New Roman"],
+ " 5"
+}], "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"F", "=", 
+   RowBox[{"z", "+", 
+    RowBox[{"1", "/", "z"}]}]}], ";"}], "\n", 
+ RowBox[{"Potential", "[", 
+  RowBox[{"F", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "0.5"}], ",", "0.5", ",", "0.1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "0.5"}], ",", "0.5", ",", "0.1"}], "}"}], ",", "Automatic", 
+   ",", "Stokes"}], "]"}]}], "Input",
+ CellChangeTimes->{3.6095884455919924`*^9},
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Exercises",
+ FontFamily->"Times New Roman"]], "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 1.", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"F", "=", 
+   RowBox[{"z", "+", 
+    RowBox[{"(", 
+     RowBox[{"1", "/", "z"}], ")"}], "+", 
+    RowBox[{"I", " ", 
+     RowBox[{"Log", "[", "z", "]"}]}]}]}], ";"}], "\n", 
+ RowBox[{"Potential", "[", 
+  RowBox[{"F", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1.5"}], ",", "1.5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "5"}], ",", "5", ",", "0.25"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "5"}], ",", "5", ",", "0.25"}], "}"}], ",", "Automatic", 
+   ",", "Stokes"}], "]"}]}], "Input",
+ CellChangeTimes->{3.609588483272045*^9, 3.609588528532109*^9},
+ FontFamily->"Times New Roman",
+ FontSize->12],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"F", "=", 
+   RowBox[{"z", "+", 
+    RowBox[{"(", 
+     RowBox[{"1", "/", "z"}], ")"}], "+", 
+    RowBox[{"2", "I", " ", 
+     RowBox[{"Log", "[", "z", "]"}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Potential", "[", 
+   RowBox[{"F", ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.5"}], ",", "1.5"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "5"}], ",", "5", ",", "0.25"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "5"}], ",", "5", ",", "0.25"}], "}"}], ",", "Automatic", 
+    ",", "Stokes"}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{3.609588486102049*^9},
+ FontFamily->"Times New Roman",
+ FontSize->12],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"F", "=", 
+   RowBox[{"z", "+", 
+    RowBox[{"(", 
+     RowBox[{"1", "/", "z"}], ")"}], "+", 
+    RowBox[{"2.2", "I", " ", 
+     RowBox[{"Log", "[", "z", "]"}]}]}]}], ";"}], "\n", 
+ RowBox[{"Potential", "[", 
+  RowBox[{"F", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "1.5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "5"}], ",", "5", ",", "0.25"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "5"}], ",", "5", ",", "0.25"}], "}"}], ",", "Automatic", 
+   ",", "Stokes"}], "]"}]}], "Input",
+ CellChangeTimes->{3.6095884882720523`*^9},
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 2", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"F", "=", 
+   RowBox[{
+    RowBox[{"Exp", "[", 
+     RowBox[{"I", " ", 
+      RowBox[{"Pi", "/", "4"}]}], "]"}], "/", "z"}]}], ";"}], "\n", 
+ RowBox[{"Potential", "[", 
+  RowBox[{"F", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "2", ",", "0.75"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "2", ",", "0.5"}], "}"}], ",", "Automatic", ",",
+    "All"}], "]"}]}], "Input",
+ CellChangeTimes->{3.6095885829521847`*^9},
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 3", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"F", "=", 
+   SqrtBox["z"]}], ";"}], "\n", 
+ RowBox[{"Potential", "[", 
+  RowBox[{"F", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "10"}], ",", "10", ",", "0.25"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "10"}], ",", "10", ",", "0.25"}], "}"}], ",", "Automatic", 
+   ",", "All"}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.609588591912197*^9, {3.6095886934723396`*^9, 3.609588708482361*^9}},
+ FontFamily->"Times New Roman",
+ FontSize->12],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"F", "=", 
+   RowBox[{"Sqrt", "[", "z", "]"}]}], ";"}], "\n", 
+ RowBox[{"Potential", "[", 
+  RowBox[{"F", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "10"}], ",", "10", ",", "0.25"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "10"}], ",", "10", ",", "0.25"}], "}"}], ",", "Automatic", 
+   ",", "All"}], "]"}]}], "Input",
+ CellChangeTimes->{3.609588591912197*^9},
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 4", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"F", "=", 
+   RowBox[{"Sqrt", "[", 
+    RowBox[{"1", "-", 
+     SuperscriptBox["z", "2"]}], "]"}]}], ";"}], "\n", 
+ RowBox[{"Potential", "[", 
+  RowBox[{"F", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "10"}], ",", "10", ",", "0.25"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "10"}], ",", "10", ",", "0.25"}], "}"}], ",", "Automatic", 
+   ",", "All"}], "]"}]}], "Input",
+ CellChangeTimes->{3.6095886206322374`*^9},
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 5", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"F", "=", 
+   RowBox[{"z", "+", 
+    RowBox[{"Sqrt", "[", 
+     RowBox[{"1", "-", 
+      SuperscriptBox["z", "2"]}], "]"}]}]}], ";"}], "\n", 
+ RowBox[{"Potential", "[", 
+  RowBox[{"F", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "10"}], ",", "10", ",", "0.5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "10"}], ",", "10", ",", "0.5"}], "}"}], ",", "Automatic", 
+   ",", "All"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.6096551589065228`*^9, 3.609655161779067*^9}},
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["The Program Wing",
+ FontSize->30,
+ FontWeight->"Bold"]], "Subtitle",
+ CellChangeTimes->{{3.60959381485751*^9, 3.609593848307557*^9}, {
+   3.611822647684*^9, 3.611822657098*^9}, 3.6118338617019997`*^9},
+ TextAlignment->Left,
+ FontFamily->"Times New Roman",
+ FontSlant->"Italic"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["The Aim of the Program Wing", "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18]], "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18],
+
+Cell[BoxData[
+ RowBox[{"UsageWing", "[", "]"}]], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["How to Use the Program Wing", "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18]], "Section",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"HelpWing", "[", " ", "]"}]], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Worked Examples",
+ FontFamily->"Times New Roman"]], "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "E",
+ StyleBox["xample",
+  FontFamily->"Times New Roman"],
+ " 1"
+}], "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xc", "=", "0.2"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yc", "=", "0.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Wing", "[", 
+  RowBox[{"xc", ",", "yc"}], "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "E",
+ StyleBox["xample",
+  FontFamily->"Times New Roman"],
+ " 2"
+}], "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xc", "=", "0.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"yc", "=", "0.15"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Wing", "[", 
+  RowBox[{"xc", ",", "yc"}], "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Exercises",
+ FontFamily->"Times New Roman"]], "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 1", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xc", "=", "0.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"yc", "=", "0.2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Wing", "[", 
+  RowBox[{"xc", ",", "yc"}], "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise  2", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xc", "=", 
+   RowBox[{"-", "0.18"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"yc", "=", "0.2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Wing", "[", 
+  RowBox[{"xc", ",", "yc"}], "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 3", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xc", "=", "0.19"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yc", "=", "0.21"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Wing", "[", 
+  RowBox[{"xc", ",", "yc"}], "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 4", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xc", "=", "0.18"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"yc", "=", "0.18"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Wing", "[", 
+  RowBox[{"xc", ",", "yc"}], "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["The Program Joukowsky",
+ FontSize->30,
+ FontWeight->"Bold"]], "Subtitle",
+ TextAlignment->Left,
+ FontFamily->"Times New Roman",
+ FontSlant->"Italic"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["The Aim of the Program Joukowsky", "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18]], "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18],
+
+Cell[BoxData[
+ RowBox[{"UsageJoukowsky", "[", "]"}]], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["How to Use the Program Joukowsky", "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18]], "Section",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"HelpJoukowsky", "[", " ", "]"}]], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Worked Examples",
+ FontFamily->"Times New Roman"]], "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "E",
+ StyleBox["xample",
+  FontFamily->"Times New Roman"],
+ " 1"
+}], "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xc", "=", 
+   RowBox[{"-", "0.2"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yc", "=", "0.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"phi", "=", 
+   RowBox[{"N", "[", 
+    RowBox[{"10", " ", "Degree"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"indata", "=", 
+   RowBox[{"Join", "[", 
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "3"}], ",", 
+         RowBox[{
+          RowBox[{"-", "1.4"}], "+", 
+          RowBox[{"1.4", 
+           RowBox[{"i", "/", "15"}]}]}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "0", ",", "15"}], "}"}]}], "]"}], ",", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", "3"}], "+", 
+          RowBox[{"2", "*", 
+           RowBox[{"i", "/", "5"}]}]}], ",", 
+         RowBox[{"-", "1.5"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "0", ",", "5"}], "}"}]}], "]"}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{"Joukowsky", "[", 
+  RowBox[{"phi", ",", "xc", ",", "yc", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1.5"}], ",", "1.6"}], "}"}], ",", "indata", ",", "10000", 
+   ",", "0", ",", "10"}], "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Exercises",
+ FontFamily->"Times New Roman"]], "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 1", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xc", "=", 
+   RowBox[{"-", "0.2"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yc", "=", "0.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"phi", "=", 
+   RowBox[{"N", "[", 
+    RowBox[{"29", " ", "Degree"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"indata", "=", 
+   RowBox[{"Join", "[", 
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "3"}], ",", 
+         RowBox[{
+          RowBox[{"-", "1.4"}], "+", 
+          RowBox[{"1.4", 
+           RowBox[{"i", "/", "15"}]}]}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "0", ",", "15"}], "}"}]}], "]"}], ",", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", "3"}], "+", 
+          RowBox[{"2", "*", 
+           RowBox[{"i", "/", "10"}]}]}], ",", 
+         RowBox[{"-", "1.5"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "0", ",", "10"}], "}"}]}], "]"}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{"Joukowsky", "[", 
+  RowBox[{"phi", ",", "xc", ",", "yc", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1.5"}], ",", "1.6"}], "}"}], ",", "indata", ",", "10000", 
+   ",", "0", ",", "10"}], "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 2", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xc", "=", 
+   RowBox[{"-", "0.18"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yc", "=", "0.2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"phi", "=", 
+   RowBox[{"N", "[", 
+    RowBox[{"8", " ", "Degree"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"indata", "=", 
+   RowBox[{"Join", "[", 
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "3"}], ",", 
+         RowBox[{
+          RowBox[{"-", "1.4"}], "+", 
+          RowBox[{"1.4", 
+           RowBox[{"i", "/", "15"}]}]}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "0", ",", "15"}], "}"}]}], "]"}], ",", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", "3"}], "+", 
+          RowBox[{"2", "*", 
+           RowBox[{"i", "/", "5"}]}]}], ",", 
+         RowBox[{"-", "1.5"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "0", ",", "5"}], "}"}]}], "]"}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{"Joukowsky", "[", 
+  RowBox[{"phi", ",", "xc", ",", "yc", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1.5"}], ",", "1.6"}], "}"}], ",", "indata", ",", "10000", 
+   ",", "0", ",", "10"}], "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 3", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xc", "=", 
+   RowBox[{"-", "0.22"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yc", "=", "0.18"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"phi", "=", 
+   RowBox[{"N", "[", 
+    RowBox[{"20", " ", "Degree"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"indata", "=", 
+   RowBox[{"Join", "[", 
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "3"}], ",", 
+         RowBox[{
+          RowBox[{"-", "1.4"}], "+", 
+          RowBox[{"1.4", 
+           RowBox[{"i", "/", "15"}]}]}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "0", ",", "15"}], "}"}]}], "]"}], ",", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", "3"}], "+", 
+          RowBox[{"2", "*", 
+           RowBox[{"i", "/", "15"}]}]}], ",", 
+         RowBox[{"-", "1.5"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "0", ",", "20"}], "}"}]}], "]"}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{"Joukowsky", "[", 
+  RowBox[{"phi", ",", "xc", ",", "yc", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1.5"}], ",", "1.6"}], "}"}], ",", "indata", ",", "100000", 
+   ",", "0", ",", "10"}], "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["The Program JoukowskyMap",
+ FontSize->30,
+ FontWeight->"Bold"]], "Subtitle",
+ CellChangeTimes->{{3.6095940015687714`*^9, 3.6095940133487883`*^9}, 
+   3.611827609251*^9},
+ TextAlignment->Left,
+ FontFamily->"Times New Roman",
+ FontSlant->"Italic"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["The Aim of the Program JoukowvkyMap", "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18]], "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18],
+
+Cell[BoxData[
+ RowBox[{"UsageJoukowskyMap", "[", "]"}]], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["How to Use the Program JoukowskyMap", "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18]], "Section",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"HelpJoukowskyMap", "[", " ", "]"}]], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Worked Examples",
+ FontFamily->"Times New Roman"]], "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "E",
+ StyleBox["xample",
+  FontFamily->"Times New Roman"],
+ " 1"
+}], "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xc", "=", "0.1"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yc", "=", "0.2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"curve", "=", "piecewise"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xa", ",", "ya"}], "}"}], "=", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"xe1", ",", "ye1"}], "}"}], "=", 
+    RowBox[{"{", 
+     RowBox[{"0.5", ",", 
+      RowBox[{"-", "0.5"}]}], "}"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xa1", ",", "ya1"}], "}"}], "=", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"xb", ",", "yb"}], "}"}], "=", 
+    RowBox[{"{", 
+     RowBox[{"0.5", ",", "0.5"}], "}"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xb1", ",", "yb1"}], "}"}], "=", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"xd", ",", "yd"}], "}"}], "=", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "0.5"}], ",", "0.5"}], "}"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xd1", ",", "yd1"}], "}"}], "=", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"xe", ",", "ye"}], "}"}], "=", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "0.5"}], ",", 
+      RowBox[{"-", "0.5"}]}], "}"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"xa", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"xa1", "-", "xa"}], ")"}]}]}], ",", 
+       RowBox[{"ya", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"ya1", "-", "ya"}], ")"}]}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"xb", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"xb1", "-", "xb"}], ")"}]}]}], ",", 
+       RowBox[{"yb", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"yb1", "-", "yb"}], ")"}]}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"xd", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"xd1", "-", "xd"}], ")"}]}]}], ",", 
+       RowBox[{"yd", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"yd1", "-", "yd"}], ")"}]}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"xe", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"xe1", "-", "xe"}], ")"}]}]}], ",", 
+       RowBox[{"ye", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"ye1", "-", "ye"}], ")"}]}]}]}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"range", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"option", "=", "null"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"JoukowskyMap", "[", 
+  RowBox[{
+  "xc", ",", "yc", ",", "curve", ",", "data", ",", "range", ",", "option"}], 
+  "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "E",
+ StyleBox["xample",
+  FontFamily->"Times New Roman"],
+ " 2"
+}], "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xc", "=", "0.1"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yc", "=", "0.2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"curve", "=", "closed"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"xc", "+", 
+      RowBox[{"2", 
+       RowBox[{"Cos", "[", "t", "]"}]}]}], ",", 
+     RowBox[{"yc", "+", 
+      RowBox[{"Sin", "[", "t", "]"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"range", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"2", "\[Pi]"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"option", "=", "null"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"JoukowskyMap", "[", 
+  RowBox[{
+  "xc", ",", "yc", ",", "curve", ",", "data", ",", "range", ",", "null"}], 
+  "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "E",
+ StyleBox["xample",
+  FontFamily->"Times New Roman"],
+ " 3"
+}], "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xc", "=", "0.2"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yc", "=", "0.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"curve", "=", "points"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1.5"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0.5", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0.75", ",", "0.75"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0.75", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"option", "=", "null"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"JoukowskyMap", "[", 
+  RowBox[{
+  "xc", ",", "yc", ",", "curve", ",", "data", ",", "range", ",", "option"}], 
+  "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xc", "=", "0.2"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yc", "=", "0.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"curve", "=", "points"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1.5"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0.5", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0.75", ",", "0.75"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0.75", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"option", "=", "parametric"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"JoukowskyMap", "[", 
+  RowBox[{
+  "xc", ",", "yc", ",", "curve", ",", "data", ",", "range", ",", "option"}], 
+  "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Exercises",
+ FontFamily->"Times New Roman"]], "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 1", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xc", "=", "0.2"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yc", "=", "0.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"xc", "+", 
+      RowBox[{"t", "*", 
+       RowBox[{"(", 
+        RowBox[{"1.2", "-", "xc"}], ")"}]}]}], ",", 
+     RowBox[{"yc", "+", 
+      RowBox[{"t", 
+       RowBox[{"(", 
+        RowBox[{"0.1", "-", "yc"}], ")"}]}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"range", "=", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "1"}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"JoukowskyMap", "[", 
+  RowBox[{
+  "xc", ",", "yc", ",", "open", ",", "data", ",", "range", ",", 
+   "parametric"}], "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 2", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xc", "=", "0.2"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yc", "=", "0.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xa", ",", "ya"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"0.1", ",", "0"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xa1", ",", "ya1"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"1.1", ",", "0"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xb", ",", "yb"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"1.1", ",", "0"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xb1", ",", "yb1"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"0.1", ",", "0.2"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xd", ",", "yd"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"0.1", ",", "0.2"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xd1", ",", "yd1"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"0.1", ",", "0"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"xa", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"xa1", "-", "xa"}], ")"}]}]}], ",", 
+       RowBox[{"ya", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"ya1", "-", "ya"}], ")"}]}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"xb", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"xb1", "-", "xb"}], ")"}]}]}], ",", 
+       RowBox[{"yb", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"yb1", "-", "yb"}], ")"}]}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"xd", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"xd1", "-", "xd"}], ")"}]}]}], ",", 
+       RowBox[{"yd", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"yd1", "-", "yd"}], ")"}]}]}]}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"range", "=", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "1"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "1"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "1"}], "}"}]}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"JoukowskyMap", "[", 
+  RowBox[{
+  "xc", ",", "yc", ",", "piecewise", ",", "data", ",", "range", ",", 
+   "parametric"}], "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 3", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xc", "=", "0.2"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yc", "=", "0.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"1", "+", 
+      RowBox[{"t", "*", 
+       RowBox[{"(", 
+        RowBox[{"1", "-", "1"}], ")"}]}]}], ",", 
+     RowBox[{"0", "+", 
+      RowBox[{"t", 
+       RowBox[{"(", 
+        RowBox[{"1.1", "-", "0"}], ")"}]}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"range", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"JoukowskyMap", "[", 
+  RowBox[{
+  "xc", ",", "yc", ",", "open", ",", "data", ",", "range", ",", 
+   "parametric"}], "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 4", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xc", "=", "0.2"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yc", "=", "0.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"xc", "+", 
+      RowBox[{"t", "*", 
+       RowBox[{"(", 
+        RowBox[{"1", "-", "xc"}], ")"}]}]}], ",", 
+     RowBox[{"yc", "-", 
+      RowBox[{"t", "*", "yc"}]}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"range", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"JoukowskyMap", "[", 
+  RowBox[{
+  "xc", ",", "yc", ",", "open", ",", "data", ",", "range", ",", 
+   "parametric"}], "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 5", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xc", "=", "0.2"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yc", "=", "0.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0.25", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0.5", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0.75", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"JoukowskyMap", "[", 
+  RowBox[{
+  "xc", ",", "yc", ",", "points", ",", "data", ",", "range", ",", 
+   "parametric"}], "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 6", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xc", "=", "0.2"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yc", "=", "0.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0.25"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0.5"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0.75"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"JoukowskyMap", "[", 
+  RowBox[{
+  "xc", ",", "yc", ",", "points", ",", "data", ",", "range", ",", 
+   "parametric"}], "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 7", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xc", "=", "0.2"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yc", "=", "0.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"0.6", 
+      RowBox[{"Cos", "[", "t", "]"}]}], ",", 
+     RowBox[{"0.6", 
+      RowBox[{"Sin", "[", "t", "]"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"range", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"2", "Pi"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"JoukowskyMap", "[", 
+  RowBox[{
+  "xc", ",", "yc", ",", "closed", ",", "data", ",", "range", ",", 
+   "parametric"}], "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 8", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xc", "=", "0.2"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yc", "=", "0.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"2", 
+      RowBox[{"Cos", "[", "t", "]"}]}], ",", 
+     RowBox[{"2", 
+      RowBox[{"Sin", "[", "t", "]"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"range", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"2", "Pi"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"JoukowskyMap", "[", 
+  RowBox[{
+  "xc", ",", "yc", ",", "closed", ",", "data", ",", "range", ",", 
+   "parametric"}], "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 9", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xc", "=", "0.2"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yc", "=", "0.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"xc", "+", 
+      RowBox[{"2", 
+       RowBox[{"Cos", "[", "t", "]"}]}]}], ",", 
+     RowBox[{"yc", "+", 
+      RowBox[{"2", 
+       RowBox[{"Sin", "[", "t", "]"}]}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"range", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"2", "Pi"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"JoukowskyMap", "[", 
+  RowBox[{
+  "xc", ",", "yc", ",", "closed", ",", "data", ",", "range", ",", 
+   "parametric"}], "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 10", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xc", "=", "0.2"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yc", "=", "0.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"xc", "+", 
+      RowBox[{"0.8", 
+       RowBox[{"Cos", "[", "t", "]"}]}]}], ",", 
+     RowBox[{"yc", "+", 
+      RowBox[{"0.8", 
+       RowBox[{"Sin", "[", "t", "]"}]}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"range", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"2", "Pi"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"JoukowskyMap", "[", 
+  RowBox[{
+  "xc", ",", "yc", ",", "closed", ",", "data", ",", "range", ",", 
+   "parametric"}], "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 11", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xc", "=", "0.2"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yc", "=", "0.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xa", ",", "ya"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"1.5", ",", 
+     RowBox[{"-", "1.5"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xa1", ",", "ya1"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"1.5", ",", "1.5"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xb", ",", "yb"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"1.5", ",", "1.5"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xb1", ",", "yb1"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1.5"}], ",", "1.5"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xd", ",", "yd"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1.5"}], ",", "1.5"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xd1", ",", "yd1"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1.5"}], ",", 
+     RowBox[{"-", "1.5"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xe", ",", "ye"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1.5"}], ",", 
+     RowBox[{"-", "1.5"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xe1", ",", "ye1"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"1.5", ",", 
+     RowBox[{"-", "1.5"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"xa", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"xa1", "-", "xa"}], ")"}]}]}], ",", 
+       RowBox[{"ya", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"ya1", "-", "ya"}], ")"}]}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"xb", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"xb1", "-", "xb"}], ")"}]}]}], ",", 
+       RowBox[{"yb", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"yb1", "-", "yb"}], ")"}]}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"xd", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"xd1", "-", "xd"}], ")"}]}]}], ",", 
+       RowBox[{"yd", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"yd1", "-", "yd"}], ")"}]}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"xe", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"xe1", "-", "xe"}], ")"}]}]}], ",", 
+       RowBox[{"ye", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"ye1", "-", "ye"}], ")"}]}]}]}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"range", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"JoukowskyMap", "[", 
+  RowBox[{
+  "xc", ",", "yc", ",", "piecewise", ",", "data", ",", "range", ",", "null"}],
+   "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 12", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xc", "=", "0.2"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yc", "=", "0.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xa", ",", "ya"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0.5"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xa1", ",", "ya1"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0.2"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xb", ",", "yb"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xb1", ",", "yb1"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0.2"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"xa", "+", 
+      RowBox[{"t", 
+       RowBox[{"(", 
+        RowBox[{"xa1", "-", "xa"}], ")"}]}]}], ",", 
+     RowBox[{"ya", "+", 
+      RowBox[{"t", 
+       RowBox[{"(", 
+        RowBox[{"ya1", "-", "ya"}], ")"}]}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"range", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"JoukowskyMap", "[", 
+  RowBox[{
+  "xc", ",", "yc", ",", "piecewise", ",", "data", ",", "range", ",", "null"}],
+   "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xc", "=", "0.2"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yc", "=", "0.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xa", ",", "ya"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0.5"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xa1", ",", "ya1"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0.2"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xb", ",", "yb"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xb1", ",", "yb1"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"0.2", ",", "1"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"xa", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"xa1", "-", "xa"}], ")"}]}]}], ",", 
+       RowBox[{"ya", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"ya1", "-", "ya"}], ")"}]}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"xa1", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"xb", "-", "xa1"}], ")"}]}]}], ",", 
+       RowBox[{"ya1", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"yb", "-", "ya1"}], ")"}]}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"xb", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"xb1", "-", "xb"}], ")"}]}]}], ",", 
+       RowBox[{"yb", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"yb1", "-", "yb"}], ")"}]}]}]}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"range", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"JoukowskyMap", "[", 
+  RowBox[{
+  "xc", ",", "yc", ",", "piecewise", ",", "data", ",", "range", ",", "null"}],
+   "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 13", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xc", "=", "0.2"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yc", "=", "0.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xa", ",", "ya"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"1.1", ",", "1.2"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xa1", ",", "ya1"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"1.2", ",", "1.2"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xb", ",", "yb"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"1.2", ",", "1.2"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xb1", ",", "yb1"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"1.2", ",", "0"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"xa", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"xa1", "-", "xa"}], ")"}]}]}], ",", 
+       RowBox[{"ya", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"ya1", "-", "ya"}], ")"}]}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"xb", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"xb1", "-", "xb"}], ")"}]}]}], ",", 
+       RowBox[{"yb", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"yb1", "-", "yb"}], ")"}]}]}]}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"range", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"JoukowskyMap", "[", 
+  RowBox[{
+  "xc", ",", "yc", ",", "piecewise", ",", "data", ",", "range", ",", "null"}],
+   "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 14", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xc", "=", "0.2"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yc", "=", "0.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xA", ",", "yA"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"0.7", ",", "0.1"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xA1", ",", "yA1"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "0.3"}], ",", "0.1"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"xc", "+", 
+        RowBox[{"0.5", 
+         RowBox[{"Cos", "[", "t", "]"}]}]}], ",", 
+       RowBox[{"yc", "+", 
+        RowBox[{"0.5", 
+         RowBox[{"Sin", "[", "t", "]"}]}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"xA", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"xA1", "-", "xA"}], ")"}]}]}], ",", 
+       RowBox[{"yA", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"yA1", "-", "yA"}], ")"}]}]}]}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"range", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "Pi"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"JoukowskyMap", "[", 
+  RowBox[{
+  "xc", ",", "yc", ",", "piecewise", ",", "data", ",", "range", ",", "null"}],
+   "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 15", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xc", "=", "0.2"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yc", "=", "0.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xA", ",", "yA"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"2.2", ",", "0.1"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"xA1", ",", "yA1"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1.8"}], ",", "0.1"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"xc", "+", 
+        RowBox[{"2", 
+         RowBox[{"Cos", "[", "t", "]"}]}]}], ",", 
+       RowBox[{"yc", "+", 
+        RowBox[{"2", 
+         RowBox[{"Sin", "[", "t", "]"}]}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"xA", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"xA1", "-", "xA"}], ")"}]}]}], ",", 
+       RowBox[{"yA", "+", 
+        RowBox[{"t", 
+         RowBox[{"(", 
+          RowBox[{"yA1", "-", "yA"}], ")"}]}]}]}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"range", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "Pi"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"JoukowskyMap", "[", 
+  RowBox[{
+  "xc", ",", "yc", ",", "piecewise", ",", "data", ",", "range", ",", "null"}],
+   "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowToolbars->"RulerBar",
+WindowSize->{1592, 789},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{Automatic, Automatic},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+Magnification->1.25,
+FrontEndVersion->"9.0 for Microsoft Windows (32-bit) (January 25, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 128, 4, 112, "Title",
+ Evaluatable->False],
+Cell[710, 28, 215, 7, 79, "Subtitle",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[950, 39, 82, 2, 84, "Section"],
+Cell[1035, 43, 561, 18, 37, "Text"],
+Cell[1599, 63, 311, 11, 35, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1947, 79, 310, 7, 71, "Subtitle"],
+Cell[CellGroupData[{
+Cell[2282, 90, 176, 4, 84, "Section"],
+Cell[2461, 96, 109, 3, 35, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2607, 104, 161, 3, 84, "Section"],
+Cell[2771, 109, 113, 3, 35, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2921, 117, 133, 3, 84, "Section"],
+Cell[CellGroupData[{
+Cell[3079, 124, 193, 8, 54, "Subsection",
+ Evaluatable->False],
+Cell[3275, 134, 711, 22, 58, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4023, 161, 195, 8, 54, "Subsection",
+ Evaluatable->False],
+Cell[4221, 171, 798, 25, 58, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5056, 201, 196, 8, 54, "Subsection",
+ Evaluatable->False],
+Cell[5255, 211, 732, 22, 58, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6024, 238, 186, 8, 54, "Subsection",
+ Evaluatable->False],
+Cell[6213, 248, 629, 21, 58, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6879, 274, 177, 8, 54, "Subsection",
+ Evaluatable->False],
+Cell[7059, 284, 657, 22, 58, "Input"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7765, 312, 127, 3, 84, "Section"],
+Cell[CellGroupData[{
+Cell[7917, 319, 111, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[8031, 324, 769, 25, 58, "Input"],
+Cell[8803, 351, 801, 26, 58, "Input"],
+Cell[9607, 379, 754, 25, 58, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10398, 409, 110, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[10511, 414, 708, 24, 58, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11256, 443, 110, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[11369, 448, 665, 22, 71, "Input"],
+Cell[12037, 472, 633, 21, 58, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12707, 498, 110, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[12820, 503, 687, 23, 63, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13544, 531, 110, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[13657, 536, 736, 24, 63, "Input"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14454, 567, 301, 7, 71, "Subtitle"],
+Cell[CellGroupData[{
+Cell[14780, 578, 171, 4, 84, "Section"],
+Cell[14954, 584, 104, 3, 35, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15095, 592, 156, 3, 84, "Section"],
+Cell[15254, 597, 108, 3, 35, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15399, 605, 133, 3, 84, "Section"],
+Cell[CellGroupData[{
+Cell[15557, 612, 177, 8, 54, "Subsection",
+ Evaluatable->False],
+Cell[15737, 622, 256, 8, 80, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16030, 635, 177, 8, 54, "Subsection",
+ Evaluatable->False],
+Cell[16210, 645, 274, 8, 80, "Input"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16533, 659, 127, 3, 84, "Section"],
+Cell[CellGroupData[{
+Cell[16685, 666, 110, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[16798, 671, 273, 8, 80, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17108, 684, 111, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[17222, 689, 293, 9, 80, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17552, 703, 110, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[17665, 708, 258, 8, 80, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17960, 721, 110, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[18073, 726, 275, 8, 80, "Input"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18409, 741, 173, 5, 71, "Subtitle"],
+Cell[CellGroupData[{
+Cell[18607, 750, 176, 4, 84, "Section"],
+Cell[18786, 756, 109, 3, 35, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18932, 764, 161, 3, 84, "Section"],
+Cell[19096, 769, 113, 3, 35, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19246, 777, 133, 3, 84, "Section"],
+Cell[CellGroupData[{
+Cell[19404, 784, 177, 8, 54, "Subsection",
+ Evaluatable->False],
+Cell[19584, 794, 1402, 47, 124, "Input"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21035, 847, 127, 3, 84, "Section"],
+Cell[CellGroupData[{
+Cell[21187, 854, 110, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[21300, 859, 1421, 47, 124, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22758, 911, 110, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[22871, 916, 1419, 47, 124, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24327, 968, 110, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[24440, 973, 1424, 47, 124, "Input"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25925, 1027, 269, 7, 71, "Subtitle"],
+Cell[CellGroupData[{
+Cell[26219, 1038, 179, 4, 84, "Section"],
+Cell[26401, 1044, 112, 3, 35, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26550, 1052, 164, 3, 84, "Section"],
+Cell[26717, 1057, 116, 3, 35, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26870, 1065, 133, 3, 84, "Section"],
+Cell[CellGroupData[{
+Cell[27028, 1072, 177, 8, 54, "Subsection",
+ Evaluatable->False],
+Cell[27208, 1082, 3037, 106, 278, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30282, 1193, 177, 8, 54, "Subsection",
+ Evaluatable->False],
+Cell[30462, 1203, 931, 31, 190, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31430, 1239, 177, 8, 54, "Subsection",
+ Evaluatable->False],
+Cell[31610, 1249, 1010, 32, 168, "Input"],
+Cell[32623, 1283, 1016, 32, 168, "Input"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33688, 1321, 127, 3, 84, "Section"],
+Cell[CellGroupData[{
+Cell[33840, 1328, 110, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[33953, 1333, 839, 29, 146, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34829, 1367, 110, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[34942, 1372, 2697, 93, 278, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37676, 1470, 110, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[37789, 1475, 791, 27, 124, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38617, 1507, 110, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[38730, 1512, 738, 24, 124, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[39505, 1541, 110, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[39618, 1546, 692, 22, 102, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[40347, 1573, 110, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[40460, 1578, 692, 22, 102, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41189, 1605, 110, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[41302, 1610, 712, 24, 124, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[42051, 1639, 110, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[42164, 1644, 708, 24, 124, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[42909, 1673, 110, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[43022, 1678, 766, 26, 124, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43825, 1709, 111, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[43939, 1714, 770, 26, 124, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[44746, 1745, 111, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[44860, 1750, 3530, 125, 300, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[48427, 1880, 111, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[48541, 1885, 1472, 51, 212, "Input"],
+Cell[50016, 1938, 2296, 79, 212, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52349, 2022, 111, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[52463, 2027, 1942, 67, 212, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[54442, 2099, 111, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[54556, 2104, 1573, 55, 168, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[56166, 2164, 111, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[56280, 2169, 1569, 55, 168, "Input"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

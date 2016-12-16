@@ -1,0 +1,3073 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     93554,       3064]
+NotebookOptionsPosition[     87108,       2848]
+NotebookOutlinePosition[     87640,       2868]
+CellTagsIndexPosition[     87597,       2865]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Chapter 2", "Title",
+ Evaluatable->False,
+ TextAlignment->Center,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[StyleBox["Vector Analysis ",
+ FontSlant->"Italic"]], "Subtitle",
+ Evaluatable->False,
+ TextAlignment->Center,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->36,
+ FontWeight->"Bold"],
+
+Cell[CellGroupData[{
+
+Cell["Load MECHANICS.m", "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18],
+
+Cell[TextData[{
+ "Suppose you have copied the package ",
+ StyleBox["MECHANICS.m ",
+  FontWeight->"Bold"],
+ " in the directory c:\\M",
+ StyleBox["ECHANICS",
+  FontVariations->{"CompatibilityType"->0}],
+ ". To load it, you have to type ",
+ StyleBox["(\[ShiftKey] + \[ReturnIndicator])  in the current ",
+  FontWeight->"Plain"],
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["Mathematica", 
+    StyleBox["\[RegisteredTrademark]",
+     FontWeight->"Plain"]], TraditionalForm]]],
+ StyleBox[" session",
+  FontWeight->"Plain"]
+}], "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ "<<C:\\Mechanics\\",
+ StyleBox["Mechanics",
+  FontWeight->"Bold"],
+ ".m"
+}], "Input",
+ CellChangeTimes->{
+  3.609480012909094*^9, {3.6118239064*^9, 3.6118239254230003`*^9}},
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["The Program Operator",
+ FontSize->30,
+ FontWeight->"Bold"]], "Subtitle",
+ TextAlignment->Left,
+ FontFamily->"Times New Roman",
+ FontSlant->"Italic"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["The Aim of the Program Operator", "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18]], "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18],
+
+Cell[BoxData[
+ RowBox[{"UsageOperator", "[", "]"}]], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["How to Use the Program Operator", "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18]], "Section",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"HelpOperator", "[", " ", "]"}]], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Worked Examples",
+ FontFamily->"Times New Roman"]], "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "E",
+ StyleBox["xample",
+  FontFamily->"Times New Roman"],
+ " 1."
+}], "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"\[Xi]", ",", "\[Eta]", ",", "z"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"c", " ", "\[Xi]", " ", "\[Eta]"}], " ", ",", 
+     RowBox[{"c", " ", 
+      SqrtBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[Xi]", "2"], "-", "1"}], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          SuperscriptBox["\[Eta]", "2"]}], ")"}]}]]}], ",", "z"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "metric"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "E",
+ StyleBox["xample",
+  FontFamily->"Times New Roman"],
+ " 2."
+}], "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox["x", "2"], "+", 
+     RowBox[{"x", " ", "y"}], "+", 
+     SuperscriptBox["y", "2"]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", "\[CurlyPhi]"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"r", " ", 
+      RowBox[{"Cos", "[", "\[CurlyPhi]", "]"}]}], ",", 
+     RowBox[{"r", " ", 
+      RowBox[{"Sin", "[", "\[CurlyPhi]", "]"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "numeric"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "E",
+ StyleBox["xample",
+  FontFamily->"Times New Roman"],
+ " 3."
+}], "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", "F", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"\[Xi]", ",", "\[Eta]", ",", "k"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      FractionBox["1", "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["\[Xi]", "2"], "-", 
+        SuperscriptBox["\[Eta]", "2"]}], ")"}]}], ",", 
+     RowBox[{"\[Xi]", " ", "\[Eta]"}], ",", 
+     RowBox[{"-", "k"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "all"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Exercises",
+ FontFamily->"Times New Roman"]], "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 1. ", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ "Apply the program ",
+ StyleBox["Operator",
+  FontWeight->"Bold"],
+ " to the coordinates introduced in Section 2.7 to determine their geometric \
+characteristics."
+}], "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Cartesian Coordinates
+\
+\>", "Subsubsection",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "metric"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Polar Coordinates", "Subsubsection",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", "\[CurlyPhi]"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"r", " ", 
+      RowBox[{"Cos", "[", "\[CurlyPhi]", "]"}]}], ",", 
+     RowBox[{"r", " ", 
+      RowBox[{"Sin", "[", "\[CurlyPhi]", "]"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "metric"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Generalized Polar Coordinates", "Subsubsection",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", "\[CurlyPhi]"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"r", " ", "a", " ", 
+      RowBox[{"Cos", "[", "\[CurlyPhi]", "]"}]}], ",", 
+     RowBox[{"r", " ", "b", " ", 
+      RowBox[{"Sin", "[", "\[CurlyPhi]", "]"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "metric"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Cylindrical Coordinates", "Subsubsection",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", "\[Theta]", ",", "z"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"r", " ", 
+      RowBox[{"Cos", "[", "\[Theta]", "]"}]}], ",", 
+     RowBox[{"r", " ", 
+      RowBox[{"Sin", "[", "\[Theta]", "]"}]}], ",", "z"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "metric"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Spherical Coordinates", "Subsubsection",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", "\[CurlyPhi]", ",", "\[Theta]"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"r", " ", 
+      RowBox[{"Cos", "[", "\[CurlyPhi]", "]"}], " ", 
+      RowBox[{"Sin", "[", "\[Theta]", "]"}]}], ",", 
+     RowBox[{"r", " ", 
+      RowBox[{"Sin", "[", "\[CurlyPhi]", "]"}], " ", 
+      RowBox[{"Sin", "[", "\[Theta]", "]"}]}], ",", 
+     RowBox[{"r", " ", 
+      RowBox[{"Cos", "[", "\[Theta]", "]"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "metric"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Elliptic Coordinates", "Subsubsection",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"\[Xi]", ",", "\[Eta]", ",", "z"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"c", " ", "\[Xi]", " ", "\[Eta]"}], ",", 
+     RowBox[{"c", " ", 
+      SqrtBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[Xi]", "2"], "-", "1"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          SuperscriptBox["\[Eta]", "2"]}], ")"}]}]]}], ",", "z"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "metric"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Parabolic Coordinates", "Subsubsection",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"\[Xi]", ",", "\[Eta]", ",", "z"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      FractionBox["1", "2"], 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["\[Eta]", "2"], "-", 
+        SuperscriptBox["\[Xi]", "2"]}], ")"}]}], ",", 
+     RowBox[{"\[Xi]", " ", "\[Eta]"}], ",", 
+     RowBox[{"-", "z"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "metric"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Bipolar Coordinates", "Subsubsection",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"\[Xi]", ",", "\[Eta]", ",", "z"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"a", " ", 
+       RowBox[{"Sinh", "[", "\[Xi]", "]"}]}], 
+      RowBox[{
+       RowBox[{"Cosh", "[", "\[Xi]", "]"}], "-", 
+       RowBox[{"Cos", "[", "\[Eta]", "]"}]}]], ",", 
+     FractionBox[
+      RowBox[{"a", " ", 
+       RowBox[{"Sin", "[", "\[Eta]", "]"}]}], 
+      RowBox[{
+       RowBox[{"Cosh", "[", "\[Xi]", "]"}], "-", 
+       RowBox[{"Cos", "[", "\[Eta]", "]"}]}]], ",", "z"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "metric"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Prolate Spheroidal Coordinates", "Subsubsection",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"\[Xi]", ",", "\[Eta]", ",", "\[CurlyPhi]"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"c", " ", "\[Xi]", " ", "\[Eta]"}], " ", ",", 
+     RowBox[{"c", " ", 
+      SqrtBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[Xi]", "2"], "-", "1"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          SuperscriptBox["\[Eta]", "2"]}], ")"}]}]], 
+      RowBox[{"Cos", "[", "\[CurlyPhi]", "]"}]}], ",", 
+     RowBox[{"c", " ", 
+      SqrtBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[Xi]", "2"], "-", "1"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          SuperscriptBox["\[Eta]", "2"]}], ")"}]}]], " ", 
+      RowBox[{"Sin", "[", "\[CurlyPhi]", "]"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "metric"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12,
+ AspectRatioMixed -> True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Oblate Spheroidal Coordinates", "Subsubsection",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"\[Xi]", ",", "\[Eta]", ",", "\[CurlyPhi]"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"c", " ", "\[Xi]", " ", "\[Eta]", " ", 
+      RowBox[{"Sin", "[", "\[CurlyPhi]", "]"}]}], ",", 
+     RowBox[{"c", " ", 
+      SqrtBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[Xi]", "2"], "-", "1"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          SuperscriptBox["\[Eta]", "2"]}], ")"}]}]]}], ",", 
+     RowBox[{"c", " ", "\[Xi]", " ", "\[Eta]", " ", 
+      RowBox[{"Cos", "[", "\[CurlyPhi]", "]"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "metric"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Paraboloidal Coordinates", "Subsubsection",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"\[Xi]", ",", "\[Eta]", ",", "\[CurlyPhi]"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[Xi]", " ", "\[Eta]", " ", 
+      RowBox[{"Cos", "[", "\[CurlyPhi]", "]"}]}], ",", 
+     RowBox[{"\[Xi]", " ", "\[Eta]", " ", 
+      RowBox[{"Sin", "[", "\[CurlyPhi]", "]"}]}], ",", 
+     RowBox[{
+      FractionBox["1", "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["\[Xi]", "2"], "-", 
+        SuperscriptBox["\[Eta]", "2"]}], ")"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "metric"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"simplifyoption", "=", "true"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 2. ", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ "Using the program ",
+ StyleBox["Operator",
+  FontWeight->"Bold"],
+ ", evaluate the differential operators of any scalar, vector, or 2-tensor \
+field both in Cartesian coordinates and those of Exercise 1."
+}], "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[CellGroupData[{
+
+Cell["Cartesian Coordinates", "Subsubsection",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", "F", "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"simplifyoption", "=", "true"}], ";"}], "\n", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", "transform", ",", "characteristic", ",", 
+   "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", 
+    RowBox[{"Vx", ",", "Vy", ",", "Vz"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"Txx", ",", "Txy", ",", "Txz"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"Tyx", ",", "Tyy", ",", "Tyz"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"Tzx", ",", "Tzy", ",", "Tzz"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"simplifyoption", "=", "true"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Polar Coordinates", "Subsubsection",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", "F", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", "\[CurlyPhi]"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"r", " ", 
+      RowBox[{"Cos", "[", "\[CurlyPhi]", "]"}]}], ",", 
+     RowBox[{"r", " ", 
+      RowBox[{"Sin", "[", "\[CurlyPhi]", "]"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", 
+    RowBox[{"Vr", ",", "V\[CurlyPhi]"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", "\[CurlyPhi]"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"r", " ", 
+      RowBox[{"Cos", "[", "\[CurlyPhi]", "]"}]}], ",", 
+     RowBox[{"r", " ", 
+      RowBox[{"Sin", "[", "\[CurlyPhi]", "]"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"Trr", ",", "Tr\[CurlyPhi]"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"T\[CurlyPhi]r", ",", "T\[CurlyPhi]\[CurlyPhi]"}], "}"}]}], 
+    "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", "\[CurlyPhi]"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"r", " ", 
+      RowBox[{"Cos", "[", "\[CurlyPhi]", "]"}]}], ",", 
+     RowBox[{"r", " ", 
+      RowBox[{"Sin", "[", "\[CurlyPhi]", "]"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"simplifyoption", "=", "true"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12,
+ FontSamily -> "Times New Roman"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Cylindrical Coordinates", "Subsubsection",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", "F", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", "\[Theta]", ",", "z"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"r", " ", 
+      RowBox[{"Cos", "[", "\[Theta]", "]"}]}], ",", 
+     RowBox[{"r", " ", 
+      RowBox[{"Sin", "[", "\[Theta]", "]"}]}], ",", "z"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", 
+    RowBox[{"Vr", ",", "V\[Theta]", ",", "Vz"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", "\[Theta]", ",", "z"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"r", " ", 
+      RowBox[{"Cos", "[", "\[Theta]", "]"}]}], ",", 
+     RowBox[{"r", " ", 
+      RowBox[{"Sin", "[", "\[Theta]", "]"}]}], ",", "z"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "all"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"Trr", ",", "Tr\[Theta]", ",", "Trz"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"T\[Theta]r", ",", "T\[Theta]\[Theta]", ",", "T\[Theta]z"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"Tzr", ",", "Tz\[Theta]", ",", "Tzz"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", "\[Theta]", ",", "z"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"r", " ", 
+      RowBox[{"Cos", "[", "\[Theta]", "]"}]}], ",", 
+     RowBox[{"r", " ", 
+      RowBox[{"Sin", "[", "\[Theta]", "]"}]}], ",", "z"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Spherical Coordinates", "Subsubsection",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", "F", "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", "\[Theta]", ",", "\[CurlyPhi]"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"r", " ", 
+      RowBox[{"Cos", "[", "\[CurlyPhi]", "]"}], " ", 
+      RowBox[{"Sin", "[", "\[Theta]", "]"}]}], ",", 
+     RowBox[{"r", " ", 
+      RowBox[{"Sin", "[", "\[CurlyPhi]", "]"}], " ", 
+      RowBox[{"Sin", "[", "\[Theta]", "]"}]}], ",", 
+     RowBox[{"r", " ", 
+      RowBox[{"Cos", "[", "\[Theta]", "]"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", 
+    RowBox[{"Vr", ",", "V\[CurlyPhi]", ",", "V\[Theta]"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", "\[CurlyPhi]", ",", "\[Theta]"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"r", " ", 
+      RowBox[{"Cos", "[", "\[CurlyPhi]", "]"}], " ", 
+      RowBox[{"Sin", "[", "\[Theta]", "]"}]}], ",", 
+     RowBox[{"r", " ", 
+      RowBox[{"Sin", "[", "\[CurlyPhi]", "]"}], " ", 
+      RowBox[{"Sin", "[", "\[Theta]", "]"}]}], ",", 
+     RowBox[{"r", " ", 
+      RowBox[{"Cos", "[", "\[Theta]", "]"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"Trr", ",", "Tr\[Theta]", ",", "Tr\[CurlyPhi]"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "T\[Theta]r", ",", "T\[Theta]\[Theta]", ",", "T\[Theta]\[CurlyPhi]"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "T\[CurlyPhi]r", ",", "T\[CurlyPhi]\[Theta]", ",", 
+       "T\[CurlyPhi]\[CurlyPhi]"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", "\[Theta]", ",", "\[CurlyPhi]"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"r", " ", 
+      RowBox[{"Cos", "[", "\[CurlyPhi]", "]"}], " ", 
+      RowBox[{"Sin", "[", "\[Theta]", "]"}]}], ",", 
+     RowBox[{"r", " ", 
+      RowBox[{"Sin", "[", "\[CurlyPhi]", "]"}], " ", 
+      RowBox[{"Sin", "[", "\[Theta]", "]"}]}], ",", 
+     RowBox[{"r", " ", 
+      RowBox[{"Cos", "[", "\[Theta]", "]"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Elliptic Coordinates", "Subsubsection",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", "F", "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"\[Xi]", ",", "\[Eta]", ",", "z"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"c", " ", "\[Xi]", " ", "\[Eta]"}], ",", 
+     RowBox[{"c", " ", 
+      SqrtBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[Xi]", "2"], "-", "1"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          SuperscriptBox["\[Eta]", "2"]}], ")"}]}]]}], ",", "z"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12,
+ MspectRatioFixed -> True],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", 
+    RowBox[{"V\[Xi]", ",", "V\[Eta]", ",", "Vz"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"\[Xi]", ",", "\[Eta]", ",", "z"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"c", " ", "\[Xi]", " ", "\[Eta]"}], ",", 
+     RowBox[{"c", " ", 
+      SqrtBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[Xi]", "2"], "-", "1"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          SuperscriptBox["\[Eta]", "2"]}], ")"}]}]]}], ",", "z"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"T\[Xi]\[Xi]", ",", "T\[Xi]\[Eta]", ",", "T\[Xi]z"}], "}"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"T\[Eta]\[Xi]", ",", "T\[Eta]\[Eta]", ",", "T\[Eta]z"}], "}"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"Tz\[Xi]", ",", "Tz\[Eta]", ",", "Tzz"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"\[Xi]", ",", "\[Eta]", ",", "z"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"c", " ", "\[Xi]", " ", "\[Eta]"}], ",", 
+     RowBox[{"c", " ", 
+      SqrtBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[Xi]", "2"], "-", "1"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          SuperscriptBox["\[Eta]", "2"]}], ")"}]}]]}], ",", "z"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Parabolic Coordinates", "Subsubsection",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", "F", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"\[Xi]", ",", "\[Eta]", ",", "k"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      FractionBox["1", "2"], 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["\[Eta]", "2"], "-", 
+        SuperscriptBox["\[Xi]", "2"]}], ")"}]}], ",", 
+     RowBox[{"\[Xi]", " ", "\[Eta]"}], ",", 
+     RowBox[{"-", "k"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", 
+    RowBox[{"V\[Xi]", ",", "V\[Eta]", ",", "Vk"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"\[Xi]", ",", "\[Eta]", ",", "k"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      FractionBox["1", "2"], 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["\[Eta]", "2"], "-", 
+        SuperscriptBox["\[Xi]", "2"]}], ")"}]}], ",", 
+     RowBox[{"\[Xi]", " ", "\[Eta]"}], ",", 
+     RowBox[{"-", "k"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSizm -> 12],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"T\[Xi]\[Xi]", ",", "T\[Xi]\[Eta]", ",", "T\[Xi]k"}], "}"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"T\[Eta]\[Xi]", ",", "T\[Eta]\[Eta]", ",", "T\[Eta]k"}], "}"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"Tk\[Xi]", ",", "Tk\[Eta]", ",", "Tkk"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"\[Xi]", ",", "\[Eta]", ",", "k"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      FractionBox["1", "2"], 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["\[Eta]", "2"], "-", 
+        SuperscriptBox["\[Xi]", "2"]}], ")"}]}], ",", 
+     RowBox[{"\[Xi]", " ", "\[Eta]"}], ",", 
+     RowBox[{"-", "k"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12,
+ FmntFamily -> "Times New Roman"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Bipolar Coordinates", "Subsubsection",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", "F", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"\[Xi]", ",", "\[Eta]", ",", "z"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"a", " ", 
+       RowBox[{"Sinh", "[", "\[Xi]", "]"}]}], 
+      RowBox[{
+       RowBox[{"Cosh", "[", "\[Xi]", "]"}], "-", 
+       RowBox[{"Cos", "[", "\[Eta]", "]"}]}]], ",", 
+     FractionBox[
+      RowBox[{"a", " ", 
+       RowBox[{"Sin", "[", "\[Eta]", "]"}]}], 
+      RowBox[{
+       RowBox[{"Cosh", "[", "\[Xi]", "]"}], "-", 
+       RowBox[{"Cos", "[", "\[Eta]", "]"}]}]], ",", "z"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", 
+    RowBox[{"V\[Xi]", ",", "V\[Eta]", ",", "Vz"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"\[Xi]", ",", "\[Eta]", ",", "z"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"a", " ", 
+       RowBox[{"Sinh", "[", "\[Xi]", "]"}]}], 
+      RowBox[{
+       RowBox[{"Cosh", "[", "\[Xi]", "]"}], "-", 
+       RowBox[{"Cos", "[", "\[Eta]", "]"}]}]], ",", 
+     FractionBox[
+      RowBox[{"a", " ", 
+       RowBox[{"Sin", "[", "\[Eta]", "]"}]}], 
+      RowBox[{
+       RowBox[{"Cosh", "[", "\[Xi]", "]"}], "-", 
+       RowBox[{"Cos", "[", "\[Eta]", "]"}]}]], ",", "z"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"T\[Xi]\[Xi]", ",", "T\[Xi]\[Eta]", ",", "T\[Xi]z"}], "}"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"T\[Eta]\[Xi]", ",", "T\[Eta]\[Eta]", ",", "T\[Eta]z"}], "}"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"Tz\[Xi]", ",", "Tz\[Eta]", ",", "Tzz"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"\[Xi]", ",", "\[Eta]", ",", "z"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"a", " ", 
+       RowBox[{"Sinh", "[", "\[Xi]", "]"}]}], 
+      RowBox[{
+       RowBox[{"Cosh", "[", "\[Xi]", "]"}], "-", 
+       RowBox[{"Cos", "[", "\[Eta]", "]"}]}]], ",", 
+     FractionBox[
+      RowBox[{"a", " ", 
+       RowBox[{"Sin", "[", "\[Eta]", "]"}]}], 
+      RowBox[{
+       RowBox[{"Cosh", "[", "\[Xi]", "]"}], "-", 
+       RowBox[{"Cos", "[", "\[Eta]", "]"}]}]], ",", "z"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Prolate Spheroidal Coordinates", "Subsubsection",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", "F", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"\[Xi]", ",", "\[Eta]", ",", "\[CurlyPhi]"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"c", " ", "\[Xi]", " ", "\[Eta]"}], " ", ",", 
+     RowBox[{"c", " ", 
+      SqrtBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[Xi]", "2"], "-", "1"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          SuperscriptBox["\[Eta]", "2"]}], ")"}]}]], 
+      RowBox[{"Cos", "[", "\[CurlyPhi]", "]"}]}], ",", 
+     RowBox[{"c", " ", 
+      SqrtBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[Xi]", "2"], "-", "1"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          SuperscriptBox["\[Eta]", "2"]}], ")"}]}]], " ", 
+      RowBox[{"Sin", "[", "\[CurlyPhi]", "]"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", 
+    RowBox[{"V\[Xi]", ",", "V\[Eta]", ",", "V\[CurlyPhi]"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"\[Xi]", ",", "\[Eta]", ",", "\[CurlyPhi]"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"c", " ", "\[Xi]", " ", "\[Eta]"}], " ", ",", 
+     RowBox[{"c", " ", 
+      SqrtBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[Xi]", "2"], "-", "1"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          SuperscriptBox["\[Eta]", "2"]}], ")"}]}]], 
+      RowBox[{"Cos", "[", "\[CurlyPhi]", "]"}]}], ",", 
+     RowBox[{"c", " ", 
+      SqrtBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[Xi]", "2"], "-", "1"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          SuperscriptBox["\[Eta]", "2"]}], ")"}]}]], " ", 
+      RowBox[{"Sin", "[", "\[CurlyPhi]", "]"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"T\[Xi]\[Xi]", ",", "T\[Xi]\[Eta]", ",", "T\[Xi]\[CurlyPhi]"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "T\[Eta]\[Xi]", ",", "T\[Eta]\[Eta]", ",", "T\[Eta]\[CurlyPhi]"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "T\[CurlyPhi]\[Xi]", ",", "T\[CurlyPhi]\[Eta]", ",", 
+       "T\[CurlyPhi]\[CurlyPhi]"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"\[Xi]", ",", "\[Eta]", ",", "\[CurlyPhi]"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"c", " ", "\[Xi]", " ", "\[Eta]"}], " ", ",", 
+     RowBox[{"c", " ", 
+      SqrtBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[Xi]", "2"], "-", "1"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          SuperscriptBox["\[Eta]", "2"]}], ")"}]}]], 
+      RowBox[{"Cos", "[", "\[CurlyPhi]", "]"}]}], ",", 
+     RowBox[{"c", " ", 
+      SqrtBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[Xi]", "2"], "-", "1"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          SuperscriptBox["\[Eta]", "2"]}], ")"}]}]], " ", 
+      RowBox[{"Sin", "[", "\[CurlyPhi]", "]"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Oblate Spheroidal Coordinates", "Subsubsection",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", "F", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"\[Xi]", ",", "\[Eta]", ",", "\[CurlyPhi]"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"c", " ", "\[Xi]", " ", "\[Eta]", " ", 
+      RowBox[{"Sin", "[", "\[CurlyPhi]", "]"}]}], ",", 
+     RowBox[{"c", " ", 
+      SqrtBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[Xi]", "2"], "-", "1"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          SuperscriptBox["\[Eta]", "2"]}], ")"}]}]]}], ",", 
+     RowBox[{"c", " ", "\[Xi]", " ", "\[Eta]", " ", 
+      RowBox[{"Cos", "[", "\[CurlyPhi]", "]"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", 
+    RowBox[{"V\[Xi]", ",", "V\[Eta]", ",", "V\[CurlyPhi]"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"\[Xi]", ",", "\[Eta]", ",", "\[CurlyPhi]"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"c", " ", "\[Xi]", " ", "\[Eta]", " ", 
+      RowBox[{"Sin", "[", "\[CurlyPhi]", "]"}]}], ",", 
+     RowBox[{"c", " ", 
+      SqrtBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[Xi]", "2"], "-", "1"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          SuperscriptBox["\[Eta]", "2"]}], ")"}]}]]}], ",", 
+     RowBox[{"c", " ", "\[Xi]", " ", "\[Eta]", " ", 
+      RowBox[{"Cos", "[", "\[CurlyPhi]", "]"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"T\[Xi]\[Xi]", ",", "T\[Xi]\[Eta]", ",", "T\[Xi]\[CurlyPhi]"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "T\[Eta]\[Xi]", ",", "T\[Eta]\[Eta]", ",", "T\[Eta]\[CurlyPhi]"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "T\[CurlyPhi]\[Xi]", ",", "T\[CurlyPhi]\[Eta]", ",", 
+       "T\[CurlyPhi]\[CurlyPhi]"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"\[Xi]", ",", "\[Eta]", ",", "\[CurlyPhi]"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"c", " ", "\[Xi]", " ", "\[Eta]", " ", 
+      RowBox[{"Sin", "[", "\[CurlyPhi]", "]"}]}], ",", 
+     RowBox[{"c", " ", 
+      SqrtBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[Xi]", "2"], "-", "1"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          SuperscriptBox["\[Eta]", "2"]}], ")"}]}]]}], ",", 
+     RowBox[{"c", " ", "\[Xi]", " ", "\[Eta]", " ", 
+      RowBox[{"Cos", "[", "\[CurlyPhi]", "]"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Paraboloidal Coordinates", "Subsubsection",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", "F", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"\[Xi]", ",", "\[Eta]", ",", "\[CurlyPhi]"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[Xi]", " ", "\[Eta]", " ", 
+      RowBox[{"Cos", "[", "\[CurlyPhi]", "]"}]}], ",", 
+     RowBox[{"\[Xi]", " ", "\[Eta]", " ", 
+      RowBox[{"Sin", "[", "\[CurlyPhi]", "]"}]}], ",", 
+     RowBox[{
+      FractionBox["1", "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["\[Xi]", "2"], "-", 
+        SuperscriptBox["\[Eta]", "2"]}], ")"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", 
+    RowBox[{"V\[Xi]", ",", "V\[Eta]", ",", "V\[CurlyPhi]"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"\[Xi]", ",", "\[Eta]", ",", "\[CurlyPhi]"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[Xi]", " ", "\[Eta]", " ", 
+      RowBox[{"Cos", "[", "\[CurlyPhi]", "]"}]}], ",", 
+     RowBox[{"\[Xi]", " ", "\[Eta]", " ", 
+      RowBox[{"Sin", "[", "\[CurlyPhi]", "]"}]}], ",", 
+     RowBox[{
+      FractionBox["1", "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["\[Xi]", "2"], "-", 
+        SuperscriptBox["\[Eta]", "2"]}], ")"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"T\[Xi]\[Xi]", ",", "T\[Xi]\[Eta]", ",", "T\[Xi]\[CurlyPhi]"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "T\[Eta]\[Xi]", ",", "T\[Eta]\[Eta]", ",", "T\[Eta]\[CurlyPhi]"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "T\[CurlyPhi]\[Xi]", ",", "T\[CurlyPhi]\[Eta]", ",", 
+       "T\[CurlyPhi]\[CurlyPhi]"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"\[Xi]", ",", "\[Eta]", ",", "\[CurlyPhi]"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[Xi]", " ", "\[Eta]", " ", 
+      RowBox[{"Cos", "[", "\[CurlyPhi]", "]"}]}], ",", 
+     RowBox[{"\[Xi]", " ", "\[Eta]", " ", 
+      RowBox[{"Sin", "[", "\[CurlyPhi]", "]"}]}], ",", 
+     RowBox[{
+      FractionBox["1", "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["\[Xi]", "2"], "-", 
+        SuperscriptBox["\[Eta]", "2"]}], ")"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 3.", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ "Evaluate the gradient and Laplacian of the function  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"F", "=", 
+    RowBox[{
+     SuperscriptBox["x", "2"], "+", 
+     RowBox[{"x", " ", "y"}], "+", 
+     SuperscriptBox["y", "2"], "+", "z"}]}], TraditionalForm]]],
+ "  in Cartesian and spherical coordinates."
+}], "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox["x", "2"], "+", 
+     RowBox[{"x", " ", "y"}], "+", 
+     SuperscriptBox["y", "2"], "+", "z"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "numeric"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox["x", "2"], "+", 
+     RowBox[{"x", " ", "y"}], "+", 
+     SuperscriptBox["y", "2"], "+", "z"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", "\[Theta]", ",", "\[CurlyPhi]"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"r", " ", 
+      RowBox[{"Cos", "[", "\[CurlyPhi]", "]"}], " ", 
+      RowBox[{"Sin", "[", "\[Theta]", "]"}]}], ",", 
+     RowBox[{"r", " ", 
+      RowBox[{"Sin", "[", "\[CurlyPhi]", "]"}], " ", 
+      RowBox[{"Sin", "[", "\[Theta]", "]"}]}], ",", 
+     RowBox[{"r", " ", 
+      RowBox[{"Cos", "[", "\[Theta]", "]"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "numeric"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 4.", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ "Determine the differential operators of the vector field ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FormBox[
+      RowBox[{
+       StyleBox["v",
+        FontWeight->"Bold"], "=", 
+       RowBox[{
+        RowBox[{"r", " ", 
+         SubscriptBox[
+          StyleBox["e",
+           FontWeight->"Bold"], "r"]}], "+", "cos\[CurlyPhi]"}]}],
+      TraditionalForm], 
+     SubscriptBox[
+      StyleBox["e",
+       FontWeight->"Bold"], "\[CurlyPhi]"]}], "+", 
+    RowBox[{"sin\[Theta]", " ", 
+     SubscriptBox[
+      StyleBox["e",
+       FontWeight->"Bold"], "\[Theta]"]}]}], TraditionalForm]]],
+ " in spherical coordinates."
+}], "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", 
+     RowBox[{"Cos", "[", "\[CurlyPhi]", "]"}], ",", 
+     RowBox[{"Sin", "[", "\[Theta]", "]"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", "\[Theta]", ",", "\[CurlyPhi]"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"r", " ", 
+      RowBox[{"Cos", "[", "\[CurlyPhi]", "]"}], " ", 
+      RowBox[{"Sin", "[", "\[Theta]", "]"}]}], ",", 
+     RowBox[{"r", " ", 
+      RowBox[{"Sin", "[", "\[CurlyPhi]", "]"}], " ", 
+      RowBox[{"Sin", "[", "\[Theta]", "]"}]}], ",", 
+     RowBox[{"r", " ", 
+      RowBox[{"Cos", "[", "\[Theta]", "]"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "numeric"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 5. ", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell["\<\
+Evaluate the differential operators of the tensor {{x,y},{x,y}} in polar \
+coordinates.\
+\>", "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tensor", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"var", "=", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", "\[CurlyPhi]"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transform", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"r", " ", 
+      RowBox[{"Cos", "[", "\[CurlyPhi]", "]"}]}], ",", 
+     RowBox[{"r", " ", 
+      RowBox[{"Sin", "[", "\[CurlyPhi]", "]"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characteristic", "=", "symbolic"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"option", "=", "operator"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"simplifyoption", "=", "true"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Operator", "[", 
+  RowBox[{
+  "tensor", ",", "var", ",", " ", "transform", ",", " ", "characteristic", 
+   ",", " ", "option", ",", "simplifyoption"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["\nCoordinate Curves",
+ FontFamily->"Times New Roman"]], "Subtitle",
+ TextAlignment->Left,
+ FontFamily->"Times New Roman",
+ FontWeight->"Bold"],
+
+Cell[CellGroupData[{
+
+Cell["Generalized Polar Coordinates (Figure 2.6)", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"invtran", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"ArcTan", "[", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"A", "*", "y"}], ")"}], "/", 
+       RowBox[{"(", 
+        RowBox[{"B", "*", "x"}], ")"}]}], "]"}], ",", 
+     RadicalBox[
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"x", "/", "A"}], ")"}], "2"], "+", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"y", "/", "B"}], ")"}], "2"]}], "2"]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A", "=", "2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"B", "=", "4"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"pl1", "=", 
+   RowBox[{"ContourPlot", "[", 
+    RowBox[{
+     RowBox[{"invtran", "[", 
+      RowBox[{"[", "1", "]"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "1.8"}], ",", 
+       RowBox[{"-", "0.001"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"y", ",", 
+       RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+     RowBox[{"Contours", "\[Rule]", "7"}], ",", 
+     RowBox[{"ContourShading", "\[Rule]", "False"}], ",", 
+     RowBox[{"PlotPoints", "\[Rule]", "50"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"pl1a", "=", 
+   RowBox[{"ContourPlot", "[", 
+    RowBox[{
+     RowBox[{"invtran", "[", 
+      RowBox[{"[", "1", "]"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0.001", ",", "1.8"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"y", ",", 
+       RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+     RowBox[{"Contours", "\[Rule]", "7"}], ",", 
+     RowBox[{"ContourShading", "\[Rule]", "False"}], ",", 
+     RowBox[{"PlotPoints", "\[Rule]", "50"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"pl2", "=", 
+    RowBox[{"ContourPlot", "[", 
+     RowBox[{
+      RowBox[{"invtran", "[", 
+       RowBox[{"[", "2", "]"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", 
+        RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"y", ",", 
+        RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+      RowBox[{"PlotRange", "\[Rule]", "Automatic"}], ",", 
+      RowBox[{"Contours", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+        "0.125", ",", "0.25", ",", "0.375", ",", "0.5", ",", "0.625", ",", 
+         "0.75"}], "}"}]}], ",", 
+      RowBox[{"ContourShading", "\[Rule]", "False"}], ",", 
+      RowBox[{"PlotPoints", "\[Rule]", "50"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"Show", "[", 
+   RowBox[{"pl1", ",", "pl1a", ",", "pl2", ",", 
+    RowBox[{"Frame", "\[Rule]", "False"}], ",", 
+    RowBox[{"Axes", "\[Rule]", "True"}], ",", 
+    RowBox[{"AxesLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y"}], "}"}]}]}], "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.61182493595*^9, 3.611824955615*^9}},
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Elliptic Coordinates (Figure 2.7)", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"sol", "=", 
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          FractionBox[
+           SuperscriptBox["x", "2"], 
+           SuperscriptBox["\[Xi]", "2"]], "+", 
+          FractionBox[
+           SuperscriptBox["y", "2"], 
+           RowBox[{
+            SuperscriptBox["\[Xi]", "2"], "-", "1"}]]}], "\[Equal]", 
+         SuperscriptBox["c", "2"]}], ",", 
+        RowBox[{
+         RowBox[{
+          FractionBox[
+           SuperscriptBox["x", "2"], 
+           SuperscriptBox["\[Eta]", "2"]], "+", 
+          FractionBox[
+           SuperscriptBox["y", "2"], 
+           RowBox[{
+            SuperscriptBox["\[Eta]", "2"], "-", "1"}]]}], "\[Equal]", 
+         SuperscriptBox["c", "2"]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"\[Xi]", ",", "\[Eta]"}], "}"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"invtran", "=", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"sol", "[", 
+        RowBox[{"[", 
+         RowBox[{"2", ",", "2", ",", "2"}], "]"}], "]"}], "/.", 
+       RowBox[{"c", "\[Rule]", "2"}]}], ",", 
+      RowBox[{
+       RowBox[{"sol", "[", 
+        RowBox[{"[", 
+         RowBox[{"15", ",", "1", ",", "2"}], "]"}], "]"}], "/.", 
+       RowBox[{"c", "\[Rule]", "2"}]}]}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", "Hyperbole", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"pl1", "=", 
+    RowBox[{"ContourPlot", "[", 
+     RowBox[{
+      RowBox[{"invtran", "[", 
+       RowBox[{"[", "1", "]"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", 
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{"3", "*", "\[Pi]"}], "2"]}], ",", 
+        FractionBox[
+         RowBox[{"3", "*", "\[Pi]"}], "2"]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"y", ",", 
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{"3", "*", "\[Pi]"}], "2"]}], ",", 
+        FractionBox[
+         RowBox[{"3", "*", "\[Pi]"}], "2"]}], "}"}], ",", 
+      RowBox[{"PlotRange", "\[Rule]", "Automatic"}], ",", 
+      RowBox[{"ContourShading", "\[Rule]", "False"}], ",", 
+      RowBox[{"Contours", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+        "0", ",", "0.3", ",", "0.5", ",", "0.7", ",", "0.9", ",", "1"}], 
+        "}"}]}], ",", 
+      RowBox[{"PlotPoints", "\[Rule]", "50"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", "Ellipse", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"pl2", "=", 
+    RowBox[{"ContourPlot", "[", 
+     RowBox[{
+      RowBox[{"invtran", "[", 
+       RowBox[{"[", "2", "]"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", 
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{"3", "*", "\[Pi]"}], "2"]}], ",", 
+        FractionBox[
+         RowBox[{"3", "*", "\[Pi]"}], "2"]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"y", ",", 
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{"3", "*", "\[Pi]"}], "2"]}], ",", 
+        FractionBox[
+         RowBox[{"3", "*", "\[Pi]"}], "2"]}], "}"}], ",", 
+      RowBox[{"PlotRange", "\[Rule]", "Automatic"}], ",", 
+      RowBox[{"ContourShading", "\[Rule]", "False"}], ",", 
+      RowBox[{"PlotPoints", "\[Rule]", "50"}], ",", 
+      RowBox[{"Contours", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "1.25", ",", "1.5", ",", "1.75", ",", "2"}], 
+        "}"}]}], ",", 
+      RowBox[{"AxesOrigin", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}]}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"Show", "[", 
+   RowBox[{"pl1", ",", "pl2", ",", 
+    RowBox[{"Frame", "\[Rule]", "False"}], ",", 
+    RowBox[{"Axes", "\[Rule]", "True"}], ",", 
+    RowBox[{"AxesLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y"}], "}"}]}]}], "]"}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.6094819548475943`*^9, {3.611824979113*^9, 3.611824993427*^9}},
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Parabolic Coordinates (Figura 2.8)", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"invtran", "=", 
+    RowBox[{"{", 
+     RowBox[{
+      RadicalBox[
+       RowBox[{
+        SqrtBox[
+         RowBox[{
+          SuperscriptBox["x", "2"], "+", 
+          SuperscriptBox["y", "2"]}]], "-", "x"}], "2"], ",", 
+      RadicalBox[
+       RowBox[{
+        SqrtBox[
+         RowBox[{
+          SuperscriptBox["x", "2"], "+", 
+          SuperscriptBox["y", "2"]}]], "+", "x"}], "2"]}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"pl1", "=", 
+    RowBox[{"ContourPlot", "[", 
+     RowBox[{
+      RowBox[{"invtran", "[", 
+       RowBox[{"[", "1", "]"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", 
+        RowBox[{"-", "15"}], ",", "15"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"y", ",", 
+        RowBox[{"-", "18"}], ",", "18"}], "}"}], ",", 
+      RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+      RowBox[{"ContourShading", "\[Rule]", "False"}], ",", 
+      RowBox[{"Contours", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "5"}], ",", 
+         RowBox[{"-", "4"}], ",", 
+         RowBox[{"-", "3"}], ",", 
+         RowBox[{"-", "2"}], ",", 
+         RowBox[{"-", "1"}], ",", "0", ",", "1", ",", "2", ",", "3", ",", "4",
+          ",", "5"}], "}"}]}], ",", 
+      RowBox[{"PlotPoints", "\[Rule]", "50"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"pl2", "=", 
+    RowBox[{"ContourPlot", "[", 
+     RowBox[{
+      RowBox[{"invtran", "[", 
+       RowBox[{"[", "2", "]"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", 
+        RowBox[{"-", "15"}], ",", "15"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"y", ",", 
+        RowBox[{"-", "18"}], ",", "18"}], "}"}], ",", 
+      RowBox[{"PlotRange", "\[Rule]", "Automatic"}], ",", 
+      RowBox[{"Contours", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "5"}], ",", 
+         RowBox[{"-", "4"}], ",", 
+         RowBox[{"-", "3"}], ",", 
+         RowBox[{"-", "2"}], ",", 
+         RowBox[{"-", "1"}], ",", "0", ",", "1", ",", "2", ",", "3", ",", "4",
+          ",", "5"}], "}"}]}], ",", 
+      RowBox[{"ContourShading", "\[Rule]", "False"}], ",", 
+      RowBox[{"PlotPoints", "\[Rule]", "50"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"Show", "[", 
+   RowBox[{"pl1", ",", "pl2", ",", 
+    RowBox[{"Frame", "\[Rule]", "False"}], ",", 
+    RowBox[{"Axes", "\[Rule]", "True"}], ",", 
+    RowBox[{"AxesLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y"}], "}"}]}]}], "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.611825010512*^9, 3.611825027368*^9}},
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Bipolar Coordinates (Figure 2.9)", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ StyleBox[
+  RowBox[{
+   RowBox[{"invtran", "=", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"ArcCoth", "[", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox["A", "2"], "+", 
+         SuperscriptBox["x", "2"], "+", 
+         SuperscriptBox["y", "2"]}], 
+        RowBox[{"2", " ", "A", " ", "x"}]], "]"}], ",", 
+      RowBox[{"ArcCot", "[", 
+       FractionBox[
+        RowBox[{
+         RowBox[{"-", 
+          SuperscriptBox["A", "2"]}], "+", 
+         SuperscriptBox["x", "2"], "+", 
+         SuperscriptBox["y", "2"]}], 
+        RowBox[{"2", " ", "A", " ", "y"}]], "]"}]}], "}"}]}], ";"}],
+  FontSize->12], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"A", "=", "2"}], ";"}], "\[IndentingNewLine]"}],
+  FontSize->12], "\[IndentingNewLine]", 
+ RowBox[{
+  StyleBox[
+   RowBox[{
+    RowBox[{"pl1", "=", 
+     RowBox[{"ContourPlot", "[", 
+      RowBox[{
+       RowBox[{"invtran", "[", 
+        RowBox[{"[", "1", "]"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", 
+         RowBox[{"-", "8"}], ",", "8"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", 
+         RowBox[{"-", "8"}], ",", "8"}], "}"}], ",", 
+       RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+       RowBox[{"ContourShading", "\[Rule]", "False"}], ",", 
+       RowBox[{"Contours", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "3"}], ",", 
+          RowBox[{"-", "2.75"}], ",", 
+          RowBox[{"-", "2.5"}], ",", 
+          RowBox[{"-", "2.25"}], ",", 
+          RowBox[{"-", "2"}], ",", 
+          RowBox[{"-", "1.75"}], ",", 
+          RowBox[{"-", "1.5"}], ",", 
+          RowBox[{"-", "1.25"}], ",", 
+          RowBox[{"-", "1"}], ",", 
+          RowBox[{"-", "0.75"}], ",", 
+          RowBox[{"-", "0.5"}], ",", 
+          RowBox[{"-", "0.25"}], ",", "0", ",", "0.25", ",", "0.5", ",", 
+          "0.75", ",", "1.25", ",", "1.5", ",", "1.75", ",", "2", ",", "2.25",
+           ",", "2.5", ",", "2.75", ",", "3"}], "}"}]}], ",", 
+       RowBox[{"PlotPoints", "\[Rule]", "250"}]}], "]"}]}], ";"}],
+   FontSize->12], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  StyleBox[
+   RowBox[{
+    RowBox[{"pl2", "=", 
+     RowBox[{"ContourPlot", "[", 
+      RowBox[{
+       RowBox[{"invtran", "[", 
+        RowBox[{"[", "2", "]"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", 
+         RowBox[{"-", "8"}], ",", "8"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", 
+         RowBox[{"-", "8"}], ",", "8"}], "}"}], ",", 
+       RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+       RowBox[{"Contours", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", 
+           FractionBox[
+            RowBox[{"11", " ", "\[Pi]"}], "6"]}], ",", 
+          RowBox[{"-", 
+           FractionBox[
+            RowBox[{"5", " ", "\[Pi]"}], "3"]}], ",", 
+          RowBox[{"-", 
+           FractionBox[
+            RowBox[{"3", " ", "\[Pi]"}], "2"]}], ",", 
+          RowBox[{"-", 
+           FractionBox[
+            RowBox[{"4", " ", "\[Pi]"}], "3"]}], ",", 
+          RowBox[{"-", 
+           FractionBox[
+            RowBox[{"7", " ", "\[Pi]"}], "6"]}], ",", 
+          RowBox[{"-", "\[Pi]"}], ",", 
+          RowBox[{"-", 
+           FractionBox[
+            RowBox[{"5", " ", "\[Pi]"}], "6"]}], ",", 
+          RowBox[{"-", 
+           FractionBox[
+            RowBox[{"2", " ", "\[Pi]"}], "3"]}], ",", 
+          RowBox[{"-", 
+           FractionBox["\[Pi]", "2"]}], ",", 
+          RowBox[{"-", 
+           FractionBox["\[Pi]", "3"]}], ",", 
+          RowBox[{"-", 
+           FractionBox["\[Pi]", "6"]}], ",", "0", ",", 
+          FractionBox["\[Pi]", "6"], ",", 
+          FractionBox["\[Pi]", "3"], ",", 
+          FractionBox["\[Pi]", "2"], ",", 
+          FractionBox[
+           RowBox[{"2", " ", "\[Pi]"}], "3"], ",", 
+          FractionBox[
+           RowBox[{"5", " ", "\[Pi]"}], "6"], ",", "\[Pi]", ",", 
+          FractionBox[
+           RowBox[{"7", " ", "\[Pi]"}], "6"], ",", 
+          FractionBox[
+           RowBox[{"4", " ", "\[Pi]"}], "3"], ",", 
+          FractionBox[
+           RowBox[{"3", " ", "\[Pi]"}], "2"], ",", 
+          FractionBox[
+           RowBox[{"5", " ", "\[Pi]"}], "3"], ",", 
+          FractionBox[
+           RowBox[{"11", " ", "\[Pi]"}], "6"], ",", 
+          RowBox[{"2", " ", "\[Pi]"}]}], "}"}]}], ",", 
+       RowBox[{"ContourShading", "\[Rule]", "False"}], ",", 
+       RowBox[{"PlotPoints", "\[Rule]", "250"}]}], "]"}]}], ";"}],
+   FontSize->12], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{"Print", "[", 
+   RowBox[{"Show", "[", 
+    RowBox[{"pl1", ",", "pl2", ",", 
+     RowBox[{"Frame", "\[Rule]", "False"}], ",", 
+     RowBox[{"Axes", "\[Rule]", "True"}], ",", 
+     RowBox[{"AxesLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "y"}], "}"}]}]}], "]"}], "]"}],
+  FontSize->12]}], "Input",
+ CellChangeTimes->{{3.611825046124*^9, 3.6118250732139997`*^9}},
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowToolbars->"RulerBar",
+WindowSize->{1424, 747},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{Automatic, Automatic},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+Magnification->1.25,
+FrontEndVersion->"9.0 for Microsoft Windows (32-bit) (January 25, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 128, 4, 112, "Title",
+ Evaluatable->False],
+Cell[710, 28, 216, 7, 79, "Subtitle",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[951, 39, 82, 2, 84, "Section"],
+Cell[1036, 43, 561, 18, 37, "Text"],
+Cell[1600, 63, 262, 10, 35, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1899, 78, 172, 5, 71, "Subtitle"],
+Cell[CellGroupData[{
+Cell[2096, 87, 175, 4, 84, "Section"],
+Cell[2274, 93, 108, 3, 35, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2419, 101, 160, 3, 84, "Section"],
+Cell[2582, 106, 112, 3, 35, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2731, 114, 133, 3, 84, "Section"],
+Cell[CellGroupData[{
+Cell[2889, 121, 178, 8, 60, "Subsection",
+ Evaluatable->False],
+Cell[3070, 131, 1233, 38, 60, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4340, 174, 178, 8, 60, "Subsection",
+ Evaluatable->False],
+Cell[4521, 184, 1166, 35, 60, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5724, 224, 178, 8, 60, "Subsection",
+ Evaluatable->False],
+Cell[5905, 234, 1157, 35, 60, "Input"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[7111, 275, 127, 3, 46, "Section"],
+Cell[CellGroupData[{
+Cell[7263, 282, 112, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[7378, 287, 224, 7, 37, "Text"],
+Cell[CellGroupData[{
+Cell[7627, 298, 87, 4, 71, "Subsubsection"],
+Cell[7717, 304, 912, 26, 190, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8666, 335, 74, 1, 42, "Subsubsection"],
+Cell[8743, 338, 1045, 31, 190, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9825, 374, 86, 1, 42, "Subsubsection"],
+Cell[9914, 377, 1065, 31, 190, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11016, 413, 80, 1, 42, "Subsubsection"],
+Cell[11099, 416, 1059, 32, 190, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12195, 453, 78, 1, 42, "Subsubsection"],
+Cell[12276, 456, 1244, 36, 190, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13557, 497, 77, 1, 42, "Subsubsection"],
+Cell[13637, 500, 1233, 38, 224, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14907, 543, 78, 1, 42, "Subsubsection"],
+Cell[14988, 546, 1150, 35, 219, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16175, 586, 76, 1, 42, "Subsubsection"],
+Cell[16254, 589, 1323, 40, 223, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17614, 634, 87, 1, 42, "Subsubsection"],
+Cell[17704, 637, 1614, 49, 224, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19355, 691, 86, 1, 42, "Subsubsection"],
+Cell[19444, 694, 1396, 41, 224, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20877, 740, 81, 1, 42, "Subsubsection"],
+Cell[20961, 743, 1250, 36, 197, "Input"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22260, 785, 112, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[22375, 790, 266, 7, 37, "Text"],
+Cell[CellGroupData[{
+Cell[22666, 801, 78, 1, 42, "Subsubsection"],
+Cell[22747, 804, 747, 23, 182, "Input"],
+Cell[23497, 829, 960, 28, 190, "Input"],
+Cell[24460, 859, 1124, 32, 168, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25621, 896, 74, 1, 42, "Subsubsection"],
+Cell[25698, 899, 1052, 31, 190, "Input"],
+Cell[26753, 932, 1092, 33, 190, "Input"],
+Cell[27848, 967, 1230, 36, 168, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29115, 1008, 80, 1, 42, "Subsubsection"],
+Cell[29198, 1011, 1066, 32, 190, "Input"],
+Cell[30267, 1045, 1109, 34, 190, "Input"],
+Cell[31379, 1081, 1345, 40, 206, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32761, 1126, 78, 1, 42, "Subsubsection"],
+Cell[32842, 1129, 1234, 36, 190, "Input"],
+Cell[34079, 1167, 1309, 38, 190, "Input"],
+Cell[35391, 1207, 1612, 47, 206, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37040, 1259, 77, 1, 42, "Subsubsection"],
+Cell[37120, 1262, 1225, 38, 224, "Input"],
+Cell[38348, 1302, 1290, 40, 224, "Input"],
+Cell[39641, 1344, 1551, 48, 224, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41229, 1397, 78, 1, 42, "Subsubsection"],
+Cell[41310, 1400, 1157, 35, 219, "Input"],
+Cell[42470, 1437, 1209, 37, 236, "Input"],
+Cell[43682, 1476, 1502, 46, 219, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[45221, 1527, 76, 1, 42, "Subsubsection"],
+Cell[45300, 1530, 1330, 40, 223, "Input"],
+Cell[46633, 1572, 1380, 42, 223, "Input"],
+Cell[48016, 1616, 1641, 50, 223, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[49694, 1671, 87, 1, 42, "Subsubsection"],
+Cell[49784, 1674, 1619, 49, 224, "Input"],
+Cell[51406, 1725, 1679, 51, 224, "Input"],
+Cell[53088, 1778, 2014, 62, 224, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[55139, 1845, 86, 1, 42, "Subsubsection"],
+Cell[55228, 1848, 1403, 41, 224, "Input"],
+Cell[56634, 1891, 1463, 43, 224, "Input"],
+Cell[58100, 1936, 1798, 54, 224, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[59935, 1995, 81, 1, 42, "Subsubsection"],
+Cell[60019, 1998, 1297, 38, 219, "Input"],
+Cell[61319, 2038, 1357, 40, 219, "Input"],
+Cell[62679, 2080, 1692, 51, 219, "Input"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[64420, 2137, 111, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[64534, 2142, 361, 11, 37, "Text"],
+Cell[64898, 2155, 1046, 31, 195, "Input"],
+Cell[65947, 2188, 1378, 41, 195, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[67362, 2234, 111, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[67476, 2239, 697, 25, 39, "Text"],
+Cell[68176, 2266, 1371, 40, 190, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[69584, 2311, 112, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[69699, 2316, 143, 4, 37, "Text"],
+Cell[69845, 2322, 1183, 36, 190, "Input"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[71089, 2365, 166, 4, 99, "Subtitle"],
+Cell[CellGroupData[{
+Cell[71280, 2373, 142, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[71425, 2378, 3102, 90, 226, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[74564, 2473, 133, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[74700, 2478, 4162, 122, 410, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[78899, 2605, 134, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[79036, 2610, 2797, 81, 216, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[81870, 2696, 132, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[82005, 2701, 5063, 142, 350, "Input"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

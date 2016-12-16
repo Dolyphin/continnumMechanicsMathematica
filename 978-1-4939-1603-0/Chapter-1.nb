@@ -1,0 +1,902 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     22448,        893]
+NotebookOptionsPosition[     18804,        756]
+NotebookOutlinePosition[     19336,        776]
+CellTagsIndexPosition[     19293,        773]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Chapter 1", "Title",
+ Evaluatable->False,
+ TextAlignment->Center,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[StyleBox["Elements of Linear Algebra",
+ FontSlant->"Italic"]], "Subtitle",
+ Evaluatable->False,
+ TextAlignment->Center,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->36,
+ FontWeight->"Bold"],
+
+Cell[CellGroupData[{
+
+Cell["Load MECHANICS.m", "Section",
+ CellChangeTimes->{{3.609480551300847*^9, 3.6094805528708496`*^9}},
+ FontFamily->"Times New Roman",
+ FontSize->18],
+
+Cell[TextData[{
+ "Suppose you have copied the package ",
+ StyleBox["MECHANICS.m ",
+  FontWeight->"Bold"],
+ " in the directory  c:\\M",
+ StyleBox["ECHANICS",
+  FontVariations->{"CompatibilityType"->0}],
+ ". To load it, you have to type ",
+ StyleBox["(\[ShiftKey] + \[ReturnIndicator])  in the current ",
+  FontWeight->"Plain"],
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["Mathematica", 
+    StyleBox["\[RegisteredTrademark]",
+     FontWeight->"Plain"]], TraditionalForm]]],
+ StyleBox[" session",
+  FontWeight->"Plain"]
+}], "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ "<<C:\\Mechanics\\",
+ StyleBox["Mechanics",
+  FontWeight->"Bold"],
+ ".m"
+}], "Input",
+ CellChangeTimes->{
+  3.609480012909094*^9, {3.6118239064*^9, 3.6118239254230003`*^9}},
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["The Program VectorSys",
+ FontSize->30,
+ FontWeight->"Bold"]], "Subtitle",
+ TextAlignment->Left,
+ FontFamily->"Times New Roman",
+ FontSlant->"Italic"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["The Aim of the Program VectorSys", "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18]], "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18],
+
+Cell[BoxData[
+ RowBox[{"UsageVectorSys", "[", "]"}]], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["How to Use the Program VectorSys", "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18]], "Section",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"HelpVectorSys", "[", " ", "]"}]], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Worked Examples",
+ FontFamily->"Times New Roman"]], "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "E",
+ StyleBox["xample",
+  FontFamily->"Times New Roman"],
+ " 1."
+}], "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"A", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "2"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"V", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "0", ",", "0"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"P", "=", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"VectorSys", "[", 
+  RowBox[{"A", ",", "V", ",", "P"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "E",
+ StyleBox["xample",
+  FontFamily->"Times New Roman"],
+ " 2."
+}], "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"A", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       RowBox[{"-", "1"}], ",", "0"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"V", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"P", "=", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"VectorSys", "[", 
+  RowBox[{"A", ",", "V", ",", "P"}], "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "E",
+ StyleBox["xample",
+  FontFamily->"Times New Roman"],
+ " 3."
+}], "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"A", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "0", ",", "0"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"V", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       RowBox[{
+        RowBox[{"-", "1"}], "/", "2"}], ",", "0"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"P", "=", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"VectorSys", "[", 
+  RowBox[{"A", ",", "V", ",", "P"}], "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "E",
+ StyleBox["xample",
+  FontFamily->"Times New Roman"],
+ " 4."
+}], "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"A", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "0", ",", "0"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"V", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "0"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"P", "=", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"VectorSys", "[", 
+  RowBox[{"A", ",", "V", ",", "P"}], "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Exercises",
+ FontFamily->"Times New Roman"]], "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 1.", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"A", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "0", ",", "3"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"V", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "0", ",", "0"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"P", "=", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "1", ",", "0"}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"VectorSys", "[", 
+  RowBox[{"A", ",", "V", ",", "P"}], "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 2.", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"A", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "3", ",", "1"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"V", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "2"}], ",", "1", ",", "3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "3", ",", 
+       RowBox[{"-", "1"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", 
+       RowBox[{"-", "2"}], ",", "4"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"P", "=", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "0", ",", "0"}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"VectorSys", "[", 
+  RowBox[{"A", ",", "V", ",", "P"}], "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 3.", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"A", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"V", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"P", "=", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"VectorSys", "[", 
+  RowBox[{"A", ",", "V", ",", "P"}], "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 4.", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"A", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"1", "/", "2"}], ",", "0", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "0"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"V", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"P", "=", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"VectorSys", "[", 
+  RowBox[{"A", ",", "V", ",", "P"}], "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 5.", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"A", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "0"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"V", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"P", "=", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"VectorSys", "[", 
+  RowBox[{"A", ",", "V", ",", "P"}], "]"}]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["The Program EigenSystemAG",
+ FontSize->30,
+ FontWeight->"Bold"]], "Subtitle",
+ TextAlignment->Left,
+ FontFamily->"Times New Roman",
+ FontSlant->"Italic"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["The Aim of the Program EigenSystemAG", "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18]], "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18],
+
+Cell[BoxData[
+ RowBox[{"UsageEigenSystemAG", "[", "]"}]], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["How to Use the Program EigenSystemAG", "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18]], "Section",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"HelpEigenSystemAG", "[", " ", "]"}]], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Worked Examples",
+ FontFamily->"Times New Roman"]], "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "E",
+ StyleBox["xample",
+  FontFamily->"Times New Roman"],
+ " 1."
+}], "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"matrix", "=", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"1", ",", "1", ",", "0", ",", "1"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "0", ",", "1", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", "1", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "1", ",", "0", ",", "1"}], "}"}]}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{"EigenSystemAG", "[", "matrix", "]"}],
+  FontColor->GrayLevel[0]]}], "Input",
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "E",
+ StyleBox["xample",
+  FontFamily->"Times New Roman"],
+ " 2."
+}], "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"matrix", "=", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"1", ",", "1"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "2"}], "}"}]}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{"EigenSystemAG", "[", "matrix", "]"}],
+  FontColor->GrayLevel[0]]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Exercises",
+ FontFamily->"Times New Roman"]], "Section",
+ FontFamily->"Times New Roman",
+ FontSize->18],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 1.", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"matrix", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "0", ",", "1"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{"EigenSystemAG", "[", "matrix", "]"}],
+  FontColor->GrayLevel[0]]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 2.", "Subsection",
+ Evaluatable->False,
+ FontFamily->"Times New Roman",
+ AspectMatioFixed -> True],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"matrix", "=", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"1", ",", "1", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "9", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "1", ",", "0"}], "}"}]}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{"EigenSystemAG", "[", "matrix", "]"}],
+  FontColor->GrayLevel[0]]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 3.", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"matrix", "=", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"1", ",", "0", ",", "0", ",", "9"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "1", ",", "0", ",", "9"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", "1", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "8", ",", "0", ",", "1"}], "}"}]}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{"EigenSystemAG", "[", "matrix", "]"}],
+  FontColor->GrayLevel[0]]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise 4", "Subsection",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"matrix", "=", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"1", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "1", ",", "0", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}]}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{"EigenSystemAG", "[", "matrix", "]"}],
+  FontColor->GrayLevel[0]]}], "Input",
+ FontFamily->"Times New Roman",
+ FontSize->12]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowToolbars->"RulerBar",
+WindowSize->{1370, 760},
+WindowMargins->{{2, Automatic}, {Automatic, 3}},
+PrintingCopies->1,
+PrintingPageRange->{Automatic, Automatic},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+Magnification->1.25,
+FrontEndVersion->"9.0 for Microsoft Windows (32-bit) (January 25, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 128, 4, 112, "Title",
+ Evaluatable->False],
+Cell[710, 28, 226, 7, 79, "Subtitle",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[961, 39, 150, 3, 84, "Section"],
+Cell[1114, 44, 562, 18, 37, "Text"],
+Cell[1679, 64, 262, 10, 35, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1978, 79, 173, 5, 71, "Subtitle"],
+Cell[CellGroupData[{
+Cell[2176, 88, 176, 4, 84, "Section"],
+Cell[2355, 94, 109, 3, 35, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2501, 102, 161, 3, 84, "Section"],
+Cell[2665, 107, 113, 3, 35, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2815, 115, 133, 3, 84, "Section"],
+Cell[CellGroupData[{
+Cell[2973, 122, 178, 8, 54, "Subsection",
+ Evaluatable->False],
+Cell[3154, 132, 976, 33, 124, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4167, 170, 178, 8, 45, "Subsection",
+ Evaluatable->False],
+Cell[4348, 180, 851, 30, 103, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5236, 215, 178, 8, 45, "Subsection",
+ Evaluatable->False],
+Cell[5417, 225, 857, 30, 103, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6311, 260, 178, 8, 45, "Subsection",
+ Evaluatable->False],
+Cell[6492, 270, 805, 28, 103, "Input"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7346, 304, 127, 3, 70, "Section"],
+Cell[CellGroupData[{
+Cell[7498, 311, 111, 3, 45, "Subsection",
+ Evaluatable->False],
+Cell[7612, 316, 951, 32, 103, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8600, 353, 111, 3, 45, "Subsection",
+ Evaluatable->False],
+Cell[8714, 358, 1189, 40, 103, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9940, 403, 111, 3, 45, "Subsection",
+ Evaluatable->False],
+Cell[10054, 408, 828, 29, 103, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10919, 442, 111, 3, 45, "Subsection",
+ Evaluatable->False],
+Cell[11033, 447, 979, 33, 103, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12049, 485, 111, 3, 45, "Subsection",
+ Evaluatable->False],
+Cell[12163, 490, 828, 29, 103, "Input"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13052, 526, 177, 5, 59, "Subtitle"],
+Cell[CellGroupData[{
+Cell[13254, 535, 180, 4, 70, "Section"],
+Cell[13437, 541, 113, 3, 29, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13587, 549, 165, 3, 70, "Section"],
+Cell[13755, 554, 117, 3, 29, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13909, 562, 133, 3, 70, "Section"],
+Cell[CellGroupData[{
+Cell[14067, 569, 178, 8, 54, "Subsection",
+ Evaluatable->False],
+Cell[14248, 579, 669, 20, 80, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14954, 604, 178, 8, 54, "Subsection",
+ Evaluatable->False],
+Cell[15135, 614, 434, 15, 80, "Input"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15618, 635, 127, 3, 84, "Section"],
+Cell[CellGroupData[{
+Cell[15770, 642, 111, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[15884, 647, 597, 18, 58, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16518, 670, 113, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[16634, 675, 529, 17, 80, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17200, 697, 111, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[17314, 702, 644, 19, 80, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17995, 726, 110, 3, 54, "Subsection",
+ Evaluatable->False],
+Cell[18108, 731, 644, 19, 80, "Input"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
